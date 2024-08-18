@@ -1,8 +1,10 @@
 import { FaTruck } from "react-icons/fa6";
-import styles from "./Hero.module.css";
 import { GiMoneyStack, GiReceiveMoney } from "react-icons/gi";
-import { Link } from "react-router-dom";
+import { FaNairaSign } from "react-icons/fa6";
 import Cta from "../../button/Cta";
+import styles from "./Hero.module.css";
+
+
 function Hero() {
 	return (
 		<section className={styles.hero}>
@@ -16,7 +18,7 @@ function Hero() {
 						Explore a world of books at your fingertips. From bestsellers to
 						hidden gems, find your next favorite book today.
 					</p>
-					<p>Browse by Category | Daily Deals | New Arrivals</p>
+					<p className={styles.typesOfGenre}>Browse by Category | Daily Deals | New Arrivals</p>
 					<Cta linkPath="/books" text="Show Now" mode="hero"/>
 				</section>
 			</section>
@@ -54,7 +56,11 @@ function Hero() {
 							</section>
 							<section>
 								<h1>free shipping </h1>
-								<p>for all orders above #500</p>
+								<p>
+									<span>for all orders above </span>
+									{" "}
+									<span><FaNairaSign /> 500</span>
+								</p>
 							</section>
 						</li>
 						<li>

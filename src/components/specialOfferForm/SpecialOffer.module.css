@@ -25,12 +25,7 @@
 		var(--paper-color);
 	max-width: 450px;
 	padding: 1.5em 2em;
-	/* min-height: 130px; */
-	/* display: flex;
-  align-items: center;
-  justify-content: center; */
-	/* font-family: "Caveat", cursive; */
-	/* font-size: 2rem; */
+
 	box-shadow: var(--shadow-size) var(--shadow-size) 2px var(--paper-dark);
 	margin: 5em auto 0;
 	perspective: 1000px;
@@ -113,9 +108,11 @@
 	width: 100%;
 	padding: 1em;
 	border: 2px solid var(--text);
-	/* border: none; */
 	border-radius: 0.5em;
 	color: var(--text);
+}
+.formControl input.error__input {
+	border: 2px solid red;
 }
 .formControl input::placeholder {
 	color: var(--text);
@@ -126,6 +123,10 @@
 	font-size: 0.85rem;
 	font-style: italic;
 	text-align: center;
+}
+
+.error {
+	color: red;
 }
 
 /* Make This Reusable */
@@ -177,4 +178,65 @@
 .btn:active {
 	/* box-shadow: 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.3); */
 	transform: translate(0.1em, 0.1em);
+}
+.notification {
+	position: fixed;
+  top: 0;
+  left: 0;
+	width: 100%;
+	height: 100%;
+  padding: 1em;
+  border-radius: 0.5em;
+
+  transition: 0.3s;
+	z-index: 1000;
+
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	padding: 3em 2em 1em;
+
+
+	background: linear-gradient(
+			to bottom right,
+			var(--paper-dark),
+			20%,
+			var(--transparent)
+		),
+		var(--paper-color);
+	max-width: 450px;
+
+	box-shadow: var(--shadow-size) var(--shadow-size) 2px var(--paper-dark);
+	perspective: 1000px;
+}
+
+.notification::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+			var(--transparent),
+			50%,
+			var(--paper-dark),
+			51%,
+			var(--transparent)
+		),
+		linear-gradient(
+			to right,
+			var(--transparent),
+			50%,
+			var(--paper-dark),
+			51%,
+			var(--transparent)
+		);
+	z-index: 5;
+}
+
+
+
+.sign {
+	font-family: var(--ff-brand);
 }

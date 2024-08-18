@@ -1,7 +1,7 @@
 import { useBooks } from "../context/BooksContext";
 import Hero from "../components/homepage/hero/Hero";
 import BookShelf from "../components/shelf/BookShelf";
-import Genre from "../components/category/Genre";
+import Genre from "../components/genre/Genre";
 import SpecialOffer from "../components/specialOfferForm/SpecialOffer";
 import Spinner from "../components/loader/Spinner";
 
@@ -10,12 +10,22 @@ function Home() {
 
 	if (isLoading) return <Spinner />;
 
-	const dailyDeals = books?.filter((book) => book.dailyDeal);
-	const newArrivals = books?.filter((book) => book.newArrival);
-	const onSale = books?.filter((book) => book.onSale);
-	const trending = books?.filter((book) => book.trending);
-	const bestseller = books?.filter((book) => book.bestseller);
-	// console.log(books, isLoading);
+	// ! get four books from each stock
+	const dailyDeals = books?.filter((book) => book.dailyDeal).slice(0,4);
+	const newArrivals = books?.filter((book) => book.newArrival).slice(0,4);
+	const onSale = books?.filter((book) => book.onSale).slice(0,4);
+	const trending = books?.filter((book) => book.trending).slice(0,4);
+	const bestseller = books?.filter((book) => book.bestseller).slice(0, 4);
+	
+	// ! get the first five genre
+	const genre = books?.reduce((arr, book) => {
+		book.categories.forEach((category) => {
+			if (!arr.includes(category)) arr.push(category);
+		});
+
+		return arr;
+	}, []).slice(0,5);
+
 
 	return (
 		<main>
@@ -25,7 +35,7 @@ function Home() {
 			<BookShelf title="Daily Deals" linkPath="/books" books={dailyDeals} />
 
 			{/* category */}
-			<Genre />
+			<Genre genre={genre} />
 
 			{/* New Arrivals*/}
 			<BookShelf title="New Arrivals" linkPath="/books" books={newArrivals} />

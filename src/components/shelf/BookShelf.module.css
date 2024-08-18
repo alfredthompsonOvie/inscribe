@@ -16,11 +16,13 @@
   grid-column: 1;
 	grid-row: 2;
   margin-top: 2em;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2em;
+}
+@media (min-width: 670px) {
+  .bookContainer {
+    justify-content: flex-start;
+  }
 }
