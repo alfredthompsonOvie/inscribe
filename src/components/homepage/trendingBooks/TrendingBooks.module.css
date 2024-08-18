@@ -1,0 +1,25 @@
+.trending {
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-rows: repeat(2, auto);
+  margin: 3em 0;
+}
+.trending header {
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin-bottom: 3em;
+}
+.trendingBooks {
+  grid-column: 2;
+  grid-row: 2;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 15em));
+  justify-content: center;
+
+  gap: 2em;
+}

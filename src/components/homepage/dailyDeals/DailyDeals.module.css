@@ -1,0 +1,200 @@
+.container {
+	display: grid;
+	grid-template-columns: 1fr 10fr 1fr;
+	grid-template-rows: auto;
+}
+.contents {
+	grid-column: 2;
+	grid-row: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  gap: 1em;
+}
+.cardContainer {
+  grid-column: 1;
+	grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1em;
+}
+/* 
+.folded {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	background: #fff;
+	box-shadow: 0.2em 0.2em 0.8em 0.2em rgba(76, 53, 73, 0.4);
+}
+
+.fold_me_please {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	filter: hue-rotate(0deg) saturate(1) brightness(1) contrast(1) opacity(1);
+	mix-blend-mode: normal;
+	image-rendering: high-quality;
+	transform: scale(1);
+	visibility: visible;
+}
+
+
+
+.folds {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: grid;
+	grid-template-columns: auto auto auto auto auto;
+}
+
+.cell {
+	border: 0px solid rgba(30, 10, 60, 0.4);
+	font-size: 1em;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.main {
+	visibility: visible;
+	filter: opacity(1);
+}
+
+.main_1 {
+	background-image: linear-gradient(
+		to right,
+		rgba(76, 53, 73, 0.2) 0%,
+		rgba(76, 53, 73, 0.1) 100%
+	);
+}
+
+.main_2 {
+	background-image: linear-gradient(
+		to right,
+		rgba(76, 53, 73, 0.04) 0%,
+		rgba(76, 53, 73, 0) 100%
+	);
+}
+
+
+.vertical {
+	visibility: visible;
+	filter: opacity(1);
+}
+
+.vertical_1 {
+	background-image: linear-gradient(
+		to right,
+		rgba(76, 53, 73, 0.08) 0%,
+		rgba(76, 53, 73, 0.02) 20%,
+		rgba(76, 53, 73, 0) 60%,
+		rgba(76, 53, 73, 0.16) 94%,
+		rgba(76, 53, 73, 0.1) 98%,
+		rgba(76, 53, 73, 0.06) 100%
+	);
+}
+
+.vertical_2 {
+	background-image: linear-gradient(
+		to right,
+		rgba(76, 53, 73, 0.06) 0%,
+		rgba(76, 53, 73, 0.1) 2%,
+		rgba(76, 53, 73, 0.16) 6%,
+		rgba(76, 53, 73, 0) 40%,
+		rgba(76, 53, 73, 0.02) 100%
+	);
+}
+
+.vertical_3 {
+	background-image: linear-gradient(
+		to right,
+		rgba(76, 53, 73, 0.3) 0%,
+		rgba(76, 53, 73, 0.24) 2%,
+		rgba(76, 53, 73, 0.15) 5%,
+		rgba(76, 53, 73, 0) 28%,
+		rgba(76, 53, 73, 0) 60%,
+		rgba(76, 53, 73, 0.16) 94%,
+		rgba(76, 53, 73, 0.1) 98%,
+		rgba(76, 53, 73, 0.06) 100%
+	);
+}
+
+.vertical_4 {
+	background-image: linear-gradient(
+		to right,
+		rgba(76, 53, 73, 0.06) 0%,
+		rgba(76, 53, 73, 0.1) 2%,
+		rgba(76, 53, 73, 0.16) 6%,
+		rgba(76, 53, 73, 0) 40%,
+		rgba(76, 53, 73, 0.02) 100%
+	);
+}
+
+.vertical_5 {
+	background-image: linear-gradient(
+		to right,
+		rgba(76, 53, 73, 0.3) 0%,
+		rgba(76, 53, 73, 0.24) 2%,
+		rgba(76, 53, 73, 0.15) 5%,
+		rgba(76, 53, 73, 0) 28%,
+		rgba(76, 53, 73, 0.02) 100%
+	);
+}
+
+
+.horizontal {
+	visibility: visible;
+	filter: opacity(1);
+}
+
+.horizontal_1 {
+	background-image: linear-gradient(
+		to bottom,
+		rgba(76, 53, 73, 0.02) 0%,
+		rgba(76, 53, 73, 0) 72%,
+		rgba(76, 53, 73, 0.15) 95%,
+		rgba(76, 53, 73, 0.24) 100%
+	);
+}
+
+.horizontal_2 {
+	background-image: linear-gradient(
+		to bottom,
+		rgba(76, 53, 73, 0.02) 0%,
+		rgba(76, 53, 73, 0) 60%,
+		rgba(76, 53, 73, 0.22) 96%,
+		rgba(76, 53, 73, 0.08) 100%
+	);
+}
+
+.horizontal_3 {
+	background-image: linear-gradient(
+		to top,
+		rgba(76, 53, 73, 0.08) 0%,
+		rgba(76, 53, 73, 0) 40%,
+		rgba(76, 53, 73, 0.14) 100%
+	);
+}
+
+.horizontal_4 {
+	background-image: linear-gradient(
+		to top,
+		rgba(76, 53, 73, 0.02) 0%,
+		rgba(76, 53, 73, 0) 60%,
+		rgba(76, 53, 73, 0.18) 94%,
+		rgba(76, 53, 73, 0.02) 100%
+	);
+} */
+
+/* ---------------------------------------------------
+Written by STARIDAS GEOGRAPHY Making Maps Pretty 
+info@staridasgeography.gr | www.staridasgeography.gr
+Copyright 2021 | All Rights Reserved | CC BY-NC-SA 4.0
+---------------------------------------------------- */

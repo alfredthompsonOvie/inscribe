@@ -1,0 +1,520 @@
+.brand {
+  font-family: var(--ff-brand);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: var(--text);
+}
+.brandFooter {
+  color: #fff;
+}
+
+/* 
+
+<div class="threeD">
+            ANOTHER WEB GUY
+</div>
+
+.threeD {
+  color: darkgrey;
+  white-space: nowrap;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3em;
+  font-family: sans-serif;
+  letter-spacing: 0.1em;
+  transition: 0.3s;
+  text-shadow: 1px 1px 0 grey, 1px 2px 0 grey, 1px 3px 0 grey, 1px 4px 0 grey,
+    1px 5px 0 grey, 1px 6px 0 grey, 1px 7px 0 grey, 1px 8px 0 grey,
+    5px 13px 15px black;
+}
+
+.threeD:hover {
+  transition: 0.3s;
+  transform: scale(1.1)translate(-50%, -50%);
+  text-shadow: 1px -1px 0 grey, 1px -2px 0 grey, 1px -3px 0 grey,
+    1px -4px 0 grey, 1px -5px 0 grey, 1px -6px 0 grey, 1px -7px 0 grey,
+    1px -8px 0 grey, 5px -13px 15px black, 5px -13px 25px #808080;
+}
+
+*/
+/*! //////////////////////////////////////////////////////////// */
+/*! //////////////////////////////////////////////////////////// */
+/*! //////////////////////////////////////////////////////////// */
+/* 
+<span class="text">ryan</span>
+
+
+.text {
+    position: absolute;
+    top: 50%; 
+    right: 50%;
+    transform: translate(50%,-50%);
+    text-transform: uppercase;
+    font-family: verdana;
+    font-size: 12em;
+    font-weight: 700;
+    color: #f5f5f5;
+    text-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+        1px 6px 1px #919191,
+        1px 7px 1px #919191,
+        1px 8px 1px #919191,
+        1px 9px 1px #919191,
+        1px 10px 1px #919191,
+    1px 18px 6px rgba(16,16,16,0.4),
+    1px 22px 10px rgba(16,16,16,0.2),
+    1px 25px 35px rgba(16,16,16,0.2),
+    1px 30px 60px rgba(16,16,16,0.4);
+}
+
+*/
+/*! //////////////////////////////////////////////////////////// */
+/*! //////////////////////////////////////////////////////////// */
+/*! //////////////////////////////////////////////////////////// */
+/* 
+ /*  HTML
+ <h1 contenteditable data-heading="Folded">Folded</h1>
+ /*  CSS
+ 	
+h1 {
+	font-family: 'Source Code Pro', monospace;
+	font-weight: 900;
+	font-size: calc(20vw + 0.5rem);
+	white-space: nowrap;
+	
+	color: lch(76 39.21 9.23 / 0.5);
+	text-transform: uppercase;
+	transform: skew(10deg) rotate(-10deg);
+	text-shadow: 1px 4px 6px lch(90 2.22 62.5), 0 0 0 lch(28 26.21 12.27), 1px 4px 6px lch(90 2.22 62.5);
+
+	&::before {
+		content: attr(data-heading);
+		position: absolute;
+		left: 0;
+		top: -4.8%;
+		overflow: hidden;
+		height: 50%;
+		color: lch(97 2.19 62.49);
+		transform: translate(1.6vw, 0) skew(-13deg) scale(1, 1.2);
+		text-shadow: 2px -1px 6px rgba(0,0,0,0.2);
+	}
+
+	&::after {
+		content: attr(data-heading);
+		position: absolute;
+		left: 0;
+		color: lch(83 2.26 62.51);
+		transform: translate(0, 0) skew(13deg) scale(1, 0.8);
+		clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%);
+		text-shadow: 2px -1px 6px lch(0 0 0 / 0.3);
+	}
+}
+ /*  JS
+
+ // JS for content editable trick from Chris Coyier
+
+var h1 = document.querySelector("h1");
+
+h1.addEventListener("input", function() {
+  this.setAttribute("data-heading", this.innerText);
+});
+
+
+*/
+/*! //////////////////////////////////////////////////////////// */
+/*! //////////////////////////////////////////////////////////// */
+/*! //////////////////////////////////////////////////////////// */
+/* 
+/* html
+<div class="stage">
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+</div>
+
+<style>
+  * *, *::before, *::after { 
+    animation-play-state: running !important;
+  }
+</style>
+<script>window.setTimeout = null;</script>
+
+/* css
+
+.stage {
+  height: 300px;
+  width: 500px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  perspective: 9999px;
+  transform-style: preserve-3d;
+}
+
+.layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: ಠ_ಠ 5s infinite alternate ease-in-out -7.5s;
+  animation-fill-mode: forwards;
+  transform: rotateY(40deg) rotateX(33deg) translateZ(0);
+}
+
+.layer:after {
+  font: 150px/0.65 "Pacifico", "Kaushan Script", Futura, "Roboto", "Trebuchet MS", Helvetica, sans-serif;
+  content: "Pure\a    css!";
+  white-space: pre;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 50px;
+  color: whitesmoke;
+  letter-spacing: -2px;
+  text-shadow: 4px 0 10px rgba(0, 0, 0, 0.13);
+}
+
+.layer:nth-child(1):after {
+  transform: translateZ(0px);
+}
+
+.layer:nth-child(2):after {
+  transform: translateZ(-1.5px);
+}
+
+.layer:nth-child(3):after {
+  transform: translateZ(-3px);
+}
+
+.layer:nth-child(4):after {
+  transform: translateZ(-4.5px);
+}
+
+.layer:nth-child(5):after {
+  transform: translateZ(-6px);
+}
+
+.layer:nth-child(6):after {
+  transform: translateZ(-7.5px);
+}
+
+.layer:nth-child(7):after {
+  transform: translateZ(-9px);
+}
+
+.layer:nth-child(8):after {
+  transform: translateZ(-10.5px);
+}
+
+.layer:nth-child(9):after {
+  transform: translateZ(-12px);
+}
+
+.layer:nth-child(10):after {
+  transform: translateZ(-13.5px);
+}
+
+.layer:nth-child(11):after {
+  transform: translateZ(-15px);
+}
+
+.layer:nth-child(12):after {
+  transform: translateZ(-16.5px);
+}
+
+.layer:nth-child(13):after {
+  transform: translateZ(-18px);
+}
+
+.layer:nth-child(14):after {
+  transform: translateZ(-19.5px);
+}
+
+.layer:nth-child(15):after {
+  transform: translateZ(-21px);
+}
+
+.layer:nth-child(16):after {
+  transform: translateZ(-22.5px);
+}
+
+.layer:nth-child(17):after {
+  transform: translateZ(-24px);
+}
+
+.layer:nth-child(18):after {
+  transform: translateZ(-25.5px);
+}
+
+.layer:nth-child(19):after {
+  transform: translateZ(-27px);
+}
+
+.layer:nth-child(20):after {
+  transform: translateZ(-28.5px);
+}
+
+.layer:nth-child(n+10):after {
+  -webkit-text-stroke: 3px rgba(0, 0, 0, 0.25);
+}
+
+.layer:nth-child(n+11):after {
+  -webkit-text-stroke: 15px dodgerblue;
+  text-shadow: 6px 0 6px #00366b, 5px 5px 5px #002951, 0 6px 6px #00366b;
+}
+
+.layer:nth-child(n+12):after {
+  -webkit-text-stroke: 15px #0077ea;
+}
+
+.layer:last-child:after {
+  -webkit-text-stroke: 17px rgba(0, 0, 0, 0.1);
+}
+
+.layer:first-child:after {
+  color: #fff;
+  text-shadow: none;
+}
+
+@keyframes ಠ_ಠ {
+  100% {
+    transform: rotateY(-40deg) rotateX(-43deg);
+  }
+}
+
+*/
+/*! //////////////////////////////////////////////////////////// */
+/*! //////////////////////////////////////////////////////////// */
+/*! //////////////////////////////////////////////////////////// */
+/* 
+/* html
+<h1 id="text3d">SHADE</h1>
+
+<!-- 
+	I woke up and decided to redo one of my photoshop logo design in pure CSS.
+	We have to admit that the CSS language is pretty awesome nowadays!!! 
+	A good day to all ;)
+-->
+
+/*css
+body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: rgba(206,188,155,1);
+  background: -moz-linear-gradient(-45deg, rgba(206,188,155,1) 0%, rgba(85,63,50,1) 51%, rgba(42,31,25,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(206,188,155,1)), color-stop(51%, rgba(85,63,50,1)), color-stop(100%, rgba(42,31,25,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(206,188,155,1) 0%, rgba(85,63,50,1) 51%, rgba(42,31,25,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(206,188,155,1) 0%, rgba(85,63,50,1) 51%, rgba(42,31,25,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(206,188,155,1) 0%, rgba(85,63,50,1) 51%, rgba(42,31,25,1) 100%);
+  background: linear-gradient(135deg, rgba(206,188,155,1) 0%, rgba(85,63,50,1) 51%, rgba(42,31,25,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cebc9b', endColorstr='#2a1f19', GradientType=1 );
+}
+
+h1 {
+  width: 100%;
+  margin: 0 auto 0 auto;
+  font-family: 'Lato', sans-serif;
+  line-height: 280px;
+  font-size: 11.5rem;
+  padding: 80px 50px;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+}
+
+/*	
+============
+	Light
+============
+
+h1::before {
+  content:"";
+  width: 100%;
+  height: 750px;
+  position: absolute;
+  top: -200px;
+  left: 10px;
+  transform: rotate(55deg);
+  background: rgba(206,188,155,.7);
+  background: -moz-linear-gradient(left, rgba(206,188,155,.7) 0%, rgba(42,31,25,0) 65%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(206,188,155,.7)), color-stop(65%, rgba(42,31,25,0)));
+  background: -webkit-linear-gradient(left, rgba(206,188,155,.7) 0%, rgba(42,31,25,0) 65%);
+  background: -o-linear-gradient(left, rgba(206,188,155,.7) 0%, rgba(42,31,25,0) 65%);
+  background: -ms-linear-gradient(left, rgba(206,188,155,.7) 0%, rgba(42,31,25,0) 65%);
+  background: linear-gradient(to right, rgba(206,188,155,.7) 0%, rgba(42,31,25,0) 65%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cebc9b', endColorstr='#2a1f19', GradientType=0.7 ); );
+}
+
+
+
+/*	
+========================
+			3D Effect
+========================
+
+#text3d {
+    color: #70869d;
+    letter-spacing: .15em;
+    text-shadow: 
+      -1px -1px 1px #efede3, 
+      0px 1px 0 #2e2e2e, 
+      0px 2px 0 #2c2c2c, 
+      0px 3px 0 #2a2a2a, 
+      0px 4px 0 #282828, 
+      0px 5px 0 #262626, 
+      0px 6px 0 #242424, 
+      0px 7px 0 #222, 
+      0px 8px 0 #202020, 
+      0px 9px 0 #1e1e1e, 
+      0px 10px 0 #1c1c1c, 
+      0px 11px 0 #1a1a1a, 
+      0px 12px 0 #181818, 
+      0px 13px 0 #161616, 
+      0px 14px 0 #141414, 
+      0px 15px 0 #121212,
+      2px 20px 5px rgba(0, 0, 0, 0.9),
+      5px 23px 5px rgba(0, 0, 0, 0.3),
+      8px 27px 8px rgba(0, 0, 0, 0.5),
+      8px 28px 35px rgba(0, 0, 0, 0.9);
+ }
+
+
+*/
+/*! //////////////////////////////////////////////////////////// */
+/*! //////////////////////////////////////////////////////////// */
+/*! //////////////////////////////////////////////////////////// */
+
+/* 
+
+<p aria-label="CodePen">
+  <span data-text="C">C</span>
+  <span data-text="O">O</span>
+  <span data-text="D">D</span>
+  <span data-text="E">E</span>
+  <span data-text="P">P</span>
+  <span data-text="E">E</span>
+  <span data-text="N">N</span>
+</p>
+
+
+// Brownish
+background-color = hsla(353, 8%, 40%, 1)
+// Purple
+background-color = hsla(259, 36%, 47%, 1)
+// CodePen Grey
+//background-color = #252527
+// CodePen Blue
+//background-color = hsla(210, 63%, 53%, 1)
+
+// Some settings
+shadow-scale =       1.1
+letter-spacing =     (300em/1000)
+initial-skew =       -40deg
+hover-skew =         -10deg
+animation-duration = .3s
+
+// Automatic settings
+shadow-initial-skew = ((initial-skew / 2) * -1)
+shadow-hover-skew =   ((hover-skew / 2) * -1)
+
+// Styles
+p
+  color #fff
+  font-family Avenir Next, Helvetica Neue, Helvetica, Tahoma, sans-serif
+  font-size 1em
+  font-weight 700
+
+  span
+    display inline-block
+    position relative
+    transform-style preserve-3d
+    perspective 500
+    -webkit-font-smoothing antialiased
+    
+    &::before,
+    &::after
+      display none
+      position absolute
+      top 0
+      left -1px
+      transform-origin left top
+      transition all ease-out animation-duration
+      content attr(data-text)
+
+    &::before
+      z-index 1
+      color rgba(0, 0, 0, .2)
+      transform scale(shadow-scale, 1) skew(0deg, shadow-initial-skew)
+
+    &::after
+      z-index 2
+      color background-color
+      text-shadow -1px 0 1px background-color, 1px 0 1px rgba(0, 0, 0, .8)
+      transform rotateY(initial-skew)
+
+    &:hover
+      &::before
+        transform scale(shadow-scale, 1) skew(0deg, shadow-hover-skew)
+      &::after
+        transform rotateY(hover-skew)
+
+    & + span
+      margin-left letter-spacing
+      
+p
+  @media (min-width: 20em)
+    font-size 2em
+    span::before,
+    span::after
+    	display block
+  @media (min-width: 30em)
+    font-size 3em
+  @media (min-width: 40em)
+    font-size 5em
+  @media (min-width: 60em)
+    font-size 8em
+
+// Unimportant bits
+html,
+body
+  margin 0
+  padding 0
+  height 100%
+
+body
+  display flex
+  align-items center
+  justify-content center
+  background-color background-color
+
+
+*/

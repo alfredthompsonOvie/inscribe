@@ -1,0 +1,410 @@
+.nav {
+	display: grid;
+	grid-template-columns: 1fr 10fr 1fr;
+	grid-template-rows: repeat(2, auto);
+	position: relative;
+	background-color: var(--background);
+}
+.navContents {
+	grid-column: 2;
+	grid-row: 1;
+	display: flex;
+	align-items: center;
+	padding: 1.5em 0;
+}
+
+.navlink {
+	text-align: center;
+	display: inline-block;
+	padding: 0.3em 1em;
+	border-radius: 0.2em;
+	color: #000;
+	font-family: var(--ff-brand);
+	font-size: 1.3rem;
+}
+.navlink:global(.active) {
+	color: var(--text);
+	font-weight: 700;
+
+}
+.navlink:hover {
+	color: var(--text);
+}
+
+.buttonsContainer {
+	margin-left: auto;
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+}
+.buttonsContainer button{
+	position: relative;
+}
+.buttonsContainer button span {
+	position: absolute;
+	top: -1em;
+	left: .5em;
+	background-color: var(--text);
+	color: #fff;
+	padding: .2em;
+	min-width: 1.5em;
+	min-height: 1.55em;
+	border-radius: 50%;
+	font-size: .8rem;
+}
+.buttonsContainer svg {
+	color: var(--text);
+	font-size: 1.3rem;
+}
+
+.searchContainer {
+	position: absolute;
+	top: 5em;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	display: none;
+}
+.showSearch {
+	display: block;
+}
+.searchContainer form {
+	margin-inline: auto;
+	max-width: 300px;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.07);
+	backdrop-filter: blur(10px);
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	padding: 1em;
+	border-radius: 0.5em;
+}
+
+/* Reset Select */
+.select select {
+	appearance: none;
+	outline: 10px red;
+	border: 0;
+	box-shadow: none;
+	flex: 1;
+	/* padding: 0 1em; */
+	background-color: var(--darkgray);
+	background-image: none;
+	cursor: pointer;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	padding: 1em;
+	color: var(--text);
+}
+/* Remove IE arrow */
+.select select::-ms-expand {
+	display: none;
+}
+/* Custom Select wrapper */
+.select {
+	position: relative;
+	display: flex;
+	/* background-color: ; */
+}
+/* Arrow */
+.select::after {
+	content: "\25BC";
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 0.3em;
+	transition: 0.25s all ease;
+	pointer-events: none;
+}
+
+.select:hover::after {
+	color: #f39c12;
+}
+
+.searchContainer input {
+	width: 100%;
+	padding: 1em;
+	border-radius: 0.5em;
+	border: none;
+	outline: var(--text);
+}
+.searchContainer button {
+	width: 100%;
+	padding: 0.8em 1em;
+	background-color: var(--text);
+	border-radius: 0.5em;
+}
+.searchContainer button svg {
+	font-size: 1.2em;
+	color: var(--background);
+}
+
+@media (min-width: 768px) {
+	.navContents {
+		padding: 1.5em 0;
+		justify-self: flex-start;
+		gap: 1em;
+		width: 100%;
+	}
+	.searchContainer {
+		position: static;
+		top: 3em;
+		left: 0;
+		/* width: 100%; */
+		z-index: 1000;
+		display: block;
+	}
+
+	.searchContainer form {
+		flex-direction: row;
+		gap: 0;
+		padding: 0;
+		max-width: 500px;
+		width: 100%;
+		border: 1px solid var(--text);
+		overflow: hidden;
+		background-color: transparent;
+	}
+	.formGroup {
+		display: flex;
+		flex: 1;
+	}
+	.searchContainer input {
+		width: 100%;
+		padding: .5em 1em;
+		border-radius: 0;
+		border: none;
+		border-left: 1px solid var(--text);
+	}
+	.searchContainer button {
+		width: initial;
+		padding: .5em 1em;
+		background-color: var(--text);
+		border-radius: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.searchBtn {
+		display: none;
+	}
+}
+
+@media (min-width: 820px) {
+	.nav {
+		display: grid;
+		grid-template-columns: 1fr 10fr 1fr;
+		grid-template-rows: auto;
+		position: relative;
+	}
+
+	.nav li {
+		width: initial;
+	}
+}
+
+/*! ------------------------------------------- */
+/*! ------------------------------------------- */
+/*! ///////////////////////////////////////////// */
+/*! ///////////////////////////////////////////// */
+/*! ///////////////////////////////////////////// */
+/*! ///////////////////////////////////////////// */
+
+/* 
+<label class="select">
+  <select>
+    <option value="1">Pure CSS Select</option>
+    <option value="2">With wrapper</option>
+    <option value="3">No JS!</option>
+  </select>
+</label>
+<p>NO wrapper "modern" version <a href="https://codepen.io/raubaca/pen/bGWmZje" target="_blank">here</a></p>
+
+*/
+
+/* 
+
+/* Reset <select> defaults 
+select {
+  appearance: none;
+  border: 0;
+  outline: 0;
+  background: none;
+  color: inherit;
+  box-shadow: none;
+}
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select wrapper 
+.select {
+  position: relative;
+  display: flex;
+  width: min(20rem, 90vw);
+  background: var(--background-select);
+  border-radius: 0.25rem;
+  overflow: hidden;
+  // Select style
+  select {
+    flex: 1;
+    padding: 1em;
+    cursor: pointer;
+  }
+  // Arrow style
+  &::after {
+    content: "\25BC";
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    transition: 0.25s all ease;
+    pointer-events: none; // IMPORTANT to click on arrow
+  }
+  // Arrow hover
+  &:hover::after {
+    color: #f39c12;
+    animation: bounce 0.5s infinite;
+  }
+}
+@keyframes bounce {
+  25% {
+    transform: translatey(5px);
+  }
+  75% {
+    transform: translatey(-5px);
+  }
+}
+
+
+
+
+*/
+
+/*! ------------------------------------------- */
+/*! ------------------------------------------- */
+/*! ///////////////////////////////////////////// */
+/*! ///////////////////////////////////////////// */
+
+/* 
+
+<div class="center">
+  <select name="sources" id="sources" class="custom-select sources" placeholder="Source Type">
+    <option value="profile">Profile</option>
+    <option value="word">Word</option>
+    <option value="hashtag">Hashtag</option>
+  </select>
+</div>
+
+*/
+/** Custom Select **/
+/* .custom-select-wrapper {
+	position: relative;
+	display: inline-block;
+	user-select: none;
+}
+.custom-select-wrapper select {
+	display: none;
+}
+.custom-select {
+	position: relative;
+	display: inline-block;
+}
+.custom-select-trigger {
+	position: relative;
+	display: block;
+	width: 130px;
+	padding: 0 84px 0 22px;
+	font-size: 22px;
+	font-weight: 300;
+	color: #fff;
+	line-height: 60px;
+	background: #5c9cd8;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.custom-select-trigger:after {
+	position: absolute;
+	display: block;
+	content: "";
+	width: 10px;
+	height: 10px;
+	top: 50%;
+	right: 25px;
+	margin-top: -3px;
+	border-bottom: 1px solid #fff;
+	border-right: 1px solid #fff;
+	transform: rotate(45deg) translateY(-50%);
+	transition: all 0.4s ease-in-out;
+	transform-origin: 50% 0;
+}
+.custom-select.opened .custom-select-trigger:after {
+	margin-top: 3px;
+	transform: rotate(-135deg) translateY(-50%);
+}
+.custom-options {
+	position: absolute;
+	display: block;
+	top: 100%;
+	left: 0;
+	right: 0;
+	min-width: 100%;
+	margin: 15px 0;
+	border: 1px solid #b5b5b5;
+	border-radius: 4px;
+	box-sizing: border-box;
+	box-shadow: 0 2px 1px rgba(0, 0, 0, 0.07);
+	background: #fff;
+	transition: all 0.4s ease-in-out;
+
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transform: translateY(-15px);
+}
+.custom-select.opened .custom-options {
+	opacity: 1;
+	visibility: visible;
+	pointer-events: all;
+	transform: translateY(0);
+}
+.custom-options:before {
+	position: absolute;
+	display: block;
+	content: "";
+	bottom: 100%;
+	right: 25px;
+	width: 7px;
+	height: 7px;
+	margin-bottom: -4px;
+	border-top: 1px solid #b5b5b5;
+	border-left: 1px solid #b5b5b5;
+	background: #fff;
+	transform: rotate(45deg);
+	transition: all 0.4s ease-in-out;
+}
+.option-hover:before {
+	background: #f9f9f9;
+}
+.custom-option {
+	position: relative;
+	display: block;
+	padding: 0 22px;
+	border-bottom: 1px solid #b5b5b5;
+	font-size: 18px;
+	font-weight: 600;
+	color: #b5b5b5;
+	line-height: 47px;
+	cursor: pointer;
+	transition: all 0.4s ease-in-out;
+}
+.custom-option:first-of-type {
+	border-radius: 4px 4px 0 0;
+}
+.custom-option:last-of-type {
+	border-bottom: 0;
+	border-radius: 0 0 4px 4px;
+}
+.custom-option:hover,
+.custom-option.selection {
+	background: #f9f9f9;
+} */

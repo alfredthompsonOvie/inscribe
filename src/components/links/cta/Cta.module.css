@@ -1,0 +1,14 @@
+
+.cta {
+  background-color: var(--accent);
+  background-color: #FFC93C;
+  padding: .7em 1.2em;
+  display: inline-block;
+  border-radius: 5em;
+  border: 1px solid transparent;
+  color: #000;
+}
+.cta:hover {
+  background-color: transparent;
+  border: 1px solid var(--background);
+}

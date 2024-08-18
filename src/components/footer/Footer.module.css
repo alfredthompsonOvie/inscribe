@@ -1,0 +1,32 @@
+.footer {
+	min-height: 20em;
+	margin-top: 5em;
+	background-color: var(--text);
+	color: #fff;
+	display: grid;
+	grid-template-columns: 1fr 10fr 1fr;
+	grid-template-rows: auto;
+}
+.content {
+	grid-column: 2;
+  padding: 5em 0 3em;
+}
+.description {
+  margin: 1em 0;
+}
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+.socials ul {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.footer a {
+	color: inherit;
+  font-size: 1.5rem;
+}

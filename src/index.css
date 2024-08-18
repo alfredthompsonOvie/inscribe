@@ -1,0 +1,82 @@
+:root {
+	--ff-headings: "Merriweather", serif;
+	--ff-text: "Open Sans", sans-serif;
+	--ff-brand: "Pacifico", cursive;
+
+	/* **Creative & Vibrant** */
+	--background: #ffffff;
+	--text: #008080;
+	--cta: #ff6f61;
+	--accent: #f7dc6f;
+	--secondary: #8e44ad;
+
+	--bulma-size-medium: 1.25rem;
+	--bulma-text-primary: var(--text);
+	--bulma-background: var(--background);
+
+
+	--paper-color: #ecb2ba;
+	--paper-dark: #c6939a;
+	--tape-gray: #dbd8be;
+	--tape-edge-gray: #b7b49d;
+	--shadow-size: 1px;
+	--transparent: rgba(255, 255, 255, 0);
+	/* --transparent: rgba(236, 178, 186, 0); */
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+a {
+	text-decoration: none;
+}
+
+body {
+	font-family: var(--ff-text);
+	background-color: var(--background);
+	color: var(--text);
+}
+#root {
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+button {
+	/* background-color: var(--cta);
+  color: var(--background);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px; */
+	background-color: transparent;
+	border: none;
+	font-size: inherit;
+	cursor: pointer;
+}
+button svg {
+	color: #000;
+}
+img {
+	max-width: 100%;
+	object-fit: cover;
+	height: 100%;
+}
+ul {
+	list-style: none;
+}
+.card {
+	background-color: var(--accent);
+	padding: 20px;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	width: 300px;
+}
+/* ! ///////////////////////////////////////////////// */
+/* ! ///////////////////////////////////////////////// */
+/* ! ///////////////////////////////////////////////// */
+/* ! ///////////////////////////////////////////////// */
+/* ! ///////////////////////////////////////////////// */

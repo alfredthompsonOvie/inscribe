@@ -1,0 +1,26 @@
+.container {
+	display: grid;
+	grid-template-columns: 1fr 10fr 1fr;
+	grid-template-rows: auto;
+  margin: 5em 0; 
+}
+.contents {
+	grid-column: 2;
+	grid-row: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  gap: 1em;
+}
+.bookContainer {
+  grid-column: 1;
+	grid-row: 2;
+  margin-top: 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+}
