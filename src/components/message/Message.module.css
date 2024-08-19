@@ -1,0 +1,82 @@
+.message {
+	grid-column: 1/-1;
+	text-align: center;
+	font-size: 2rem;
+	font-style: italic;
+	min-height: 70vh;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+}
+.booksPage {
+	grid-column: 2;
+	justify-content: start;
+	margin-top: 3em;
+	max-width: 450px;
+	margin-inline: auto;
+}
+@media (min-width: 768px) {
+	.booksPage {
+		grid-column: 3;
+		min-height: initial;
+		justify-content: start;
+		margin-top: 1em;
+		min-height: initial;
+	}
+}
+
+.btn {
+	position: relative;
+	font-size: 1.2em;
+	padding: 0.7em 1.4em;
+	padding: 0.5em 1.2em;
+	background-color: var(--text);
+	text-decoration: none;
+	border: none;
+	border-radius: 0.5em;
+	color: #dedede;
+
+	justify-self: start;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2;
+	grid-column: 4;
+	grid-column: 1/-1;
+	width: 100%;
+	margin-top: 1em;
+	overflow: hidden;
+}
+.btn.btnLink {
+	width: initial;
+	display: inline-flex;
+	font-size: 1rem;
+}
+.btn::before {
+	position: absolute;
+	content: "";
+	height: 0;
+	width: 0;
+	top: 0;
+	left: 0;
+	background: linear-gradient(
+		135deg,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(255, 255, 255, 1) 50%,
+		rgba(150, 4, 31, 1) 50%,
+		rgba(191, 4, 38, 1) 60%
+	);
+	border-radius: 0 0 0.5em 0;
+	box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.3);
+	transition: 0.3s;
+}
+
+.btn:hover::before {
+	width: 1.6em;
+	height: 1.6em;
+}
+
+.btn:active {
+	transform: translate(0.1em, 0.1em);
+}

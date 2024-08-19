@@ -12,8 +12,6 @@ function RelatedBooks({ searchId }) {
 		?.filter((book) => book.categories.some((b) => foundBook.includes(b)))
 		.filter((book) => book.rating > 4.7);
 
-	console.log(relatedBook);
-
 	return (
 		<section className={styles.relatedItems}>
 			<BookShelf

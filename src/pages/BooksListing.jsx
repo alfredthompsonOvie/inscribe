@@ -11,11 +11,11 @@ function BooksListing() {
 	const [filteredBooks, setFilteredBooks] = useState([]);
 	const [sortBy, setSortBy] = useState("default");
 
+	// ! get all genre from books, no duplicates
 	const categories = books?.reduce((arr, book) => {
 		book.categories.forEach((category) => {
 			if (!arr.includes(category)) arr.push(category);
 		});
-
 		return arr;
 	}, []);
 
@@ -30,16 +30,16 @@ function BooksListing() {
 	}
 
 	useEffect(() => {
-		const category = searchParams.get("genre");
+		// const category = searchParams.get("genre");
 		const searchTerm = searchParams.get("query");
+		console.log(sortBy);
 
 		if (searchTerm) {
 			const searched = books.filter((book) =>
 				book.title.toLowerCase().includes(searchTerm.toLowerCase())
 			);
-
-			// console.log(searched);
 			setFilteredBooks(searched);
+
 			return;
 		}
 
@@ -47,47 +47,22 @@ function BooksListing() {
 			setFilteredBooks(books);
 			return;
 		}
-		if (sortBy && sortBy !== "default") { 
-			// console.log("sort by not ===  default")
-			// console.log(sortBy)
-			const sortedBooks = books
+		if ( sortBy !== "default") { 
+			console.log("here")
+			const sortedBooks = books	
 				?.filter((book) => book.categories.includes(sortBy));
 	
-				setFilteredBooks(sortedBooks)
+			setFilteredBooks(sortedBooks)
+			
+			return;
 		}
+
+
 
 
 
 	}, [searchParams, books, sortBy]);
 
-	// useEffect(() => {
-	// 	const category = searchParams.get('genre');
-	// 	const query = searchParams.get('query');
-
-	// 	const searched = books.filter(book => book.title.toLowerCase().includes(query.toLowerCase()));
-
-	// 	// if (query) {
-	// 	// 	setFilteredBooks(searched);
-	//   //   return;
-	// 	// }
-
-	// 	// console.log(searched)
-	// 	console.log(category, query)
-	// }, [searchParams, books]);
-
-	// useEffect(() => {
-	// 	// console.log(sortBy)
-	// 	if (sortBy === "default") {
-	// 		setFilteredBooks(books);
-	// 		return;
-	// 	}
-
-	// 	const sortedBooks = books
-	// 		?.filter((book) => book.categories.includes(sortBy));
-
-	// 		setFilteredBooks(sortedBooks)
-
-	// }, [sortBy, books]);
 
 	return (
 		<main className={styles.container}>
@@ -95,6 +70,7 @@ function BooksListing() {
 			<Listings
 				getFilteredBooks={getFilteredBooks}
 				filteredBooks={filteredBooks}
+				isLoading={isLoading}
 			/>
 		</main>
 	);

@@ -1,544 +1,602 @@
 [
-  {
-    "id": 1,
-    "title": "The Great Gatsby",
-    "author": "F. Scott Fitzgerald",
-    "price": 10.99,
-    "oldPrice": 14.99,
-    "discount": "26%",
-    "description": "A classic novel of the Roaring Twenties, The Great Gatsby tells the story of the mysterious millionaire Jay Gatsby and his obsession with the beautiful Daisy Buchanan.",
-    "trending": true,
-    "onSale": true,
-    "dailyDeal": false,
-    "bestseller": true,
-    "newArrival": false,
-    "categories": ["Fiction", "Classics"],
-    "rating": 4.7,
-    "testimonials": [
-      {
-        "user": "LiteraryLover",
-        "comment": "A mesmerizing tale of wealth, love, and the American Dream. Truly timeless!"
-      },
-      {
-        "user": "HistoryBuff",
-        "comment": "Gatsby's world feels so real, it's like stepping back in time."
-      }
-    ],
-    "image": "/images/gatsby.jpeg"
-  },
-  {
-    "id": 2,
-    "title": "To Kill a Mockingbird",
-    "author": "Harper Lee",
-    "price": 8.99,
-    "oldPrice": 12.99,
-    "discount": "31%",
-    "description": "Harper Lee's Pulitzer Prize-winning novel about racial injustice in the Deep South, as seen through the eyes of young Scout Finch.",
-    "trending": true,
-    "onSale": true,
-    "dailyDeal": true,
-    "bestseller": true,
-    "newArrival": false,
-    "categories": ["Fiction", "Classics", "Historical"],
-    "rating": 4.9,
-    "testimonials": [
-      {
-        "user": "JusticeSeeker",
-        "comment": "An essential read that sheds light on the enduring struggles against racism."
-      },
-      {
-        "user": "Bookworm22",
-        "comment": "Beautifully written, deeply moving, and as relevant today as ever."
-      }
-    ],
-    "image": "/images/mockingbird.jpeg"
-  },
-  {
-    "id": 3,
-    "title": "The Da Vinci Code",
-    "author": "Dan Brown",
-    "price": 12.99,
-    "oldPrice": 16.99,
-    "discount": "24%",
-    "description": "A mind-bending thriller that takes you on a chase through the heart of Europe, unraveling a secret that has been hidden for centuries.",
-    "trending": true,
-    "onSale": true,
-    "dailyDeal": false,
-    "bestseller": false,
-    "newArrival": false,
-    "categories": ["Mystery", "Thriller", "Fiction"],
-    "rating": 4.5,
-    "testimonials": [
-      {
-        "user": "ThrillerFan",
-        "comment": "A page-turner from start to finish! The twists and turns never stop."
-      },
-      {
-        "user": "MysteryLover",
-        "comment": "Dan Brown's best work. It's hard to put down once you start."
-      }
-    ],
-    "image": "/images/davinci.jpeg"
-  },
-  {
-    "id": 4,
-    "title": "Sapiens: A Brief History of Humankind",
-    "author": "Yuval Noah Harari",
-    "price": 15.99,
-    "oldPrice": 0,
-    "discount": "0%",
-    "description": "An exploration of the history of our species, from the earliest humans to the modern age, offering profound insights into who we are and where we are going.",
-    "trending": false,
-    "onSale": false,
-    "dailyDeal": false,
-    "bestseller": true,
-    "newArrival": false,
-    "categories": ["Non-Fiction", "History", "Science"],
-    "rating": 4.8,
-    "testimonials": [
-      {
-        "user": "HistoryGeek",
-        "comment": "A fascinating look at human history that changes how you see the world."
-      },
-      {
-        "user": "ScienceNerd",
-        "comment": "Harari's writing is both engaging and thought-provoking. A must-read!"
-      }
-    ],
-    "image": "/images/sapiens.jpeg"
-  },
-  {
-    "id": 5,
-    "title": "The Silent Patient",
-    "author": "Alex Michaelides",
-    "price": 9.99,
-    "oldPrice": 14.99,
-    "discount": "33%",
-    "description": "A psychological thriller about a woman who shoots her husband and then refuses to speak another word. The story unfolds as a psychotherapist tries to unravel the mystery.",
-    "trending": true,
-    "onSale": true,
-    "dailyDeal": true,
-    "bestseller": false,
-    "newArrival": false,
-    "categories": ["Fiction", "Mystery", "Thriller"],
-    "rating": 4.6,
-    "testimonials": [
-      {
-        "user": "PsychThrillerFan",
-        "comment": "Absolutely gripping! The plot twists left me speechless."
-      },
-      {
-        "user": "NovelAddict",
-        "comment": "A dark, intense read that will keep you guessing until the very end."
-      }
-    ],
-    "image": "/images/silentpatient.jpeg"
-  },
-  {
-    "id": 6,
-    "title": "Educated",
-    "author": "Tara Westover",
-    "price": 13.99,
-    "oldPrice": 0,
-    "discount": "0%",
-    "description": "A memoir about a woman who grew up in a strict and abusive household in rural Idaho but eventually escapes to learn about the world through education.",
-    "trending": true,
-    "onSale": false,
-    "dailyDeal": false,
-    "bestseller": true,
-    "newArrival": false,
-    "categories": ["Non-Fiction", "Memoir", "Inspirational"],
-    "rating": 4.9,
-    "testimonials": [
-      {
-        "user": "MemoirReader",
-        "comment": "An incredibly powerful story of resilience and the transformative power of education."
-      },
-      {
-        "user": "InspirationSeeker",
-        "comment": "Tara Westover's journey is nothing short of inspiring."
-      }
-    ],
-    "image": "/images/educated.jpeg"
-  },
-  {
-    "id": 7,
-    "title": "Where the Crawdads Sing",
-    "author": "Delia Owens",
-    "price": 11.99,
-    "oldPrice": 14.99,
-    "discount": "20%",
-    "description": "A haunting tale of a young woman growing up in the marshlands of North Carolina, blending mystery, love, and survival.",
-    "trending": true,
-    "onSale": true,
-    "dailyDeal": false,
-    "bestseller": true,
-    "newArrival": false,
-    "categories": ["Fiction", "Mystery", "Romance"],
-    "rating": 4.7,
-    "testimonials": [
-      {
-        "user": "NatureLover",
-        "comment": "The descriptions of the marsh are so vivid, it feels like you're there."
-      },
-      {
-        "user": "MysteryFan",
-        "comment": "A beautiful story with an unexpected twist. A must-read!"
-      }
-    ],
-    "image": "/images/crawdads.jpeg"
-  },
-  {
-    "id": 8,
-    "title": "Atomic Habits",
-    "author": "James Clear",
-    "price": 14.99,
-    "oldPrice": 0,
-    "discount": "0%",
-    "description": "An insightful guide to building good habits and breaking bad ones, with practical strategies for achieving long-term success.",
-    "trending": false,
-    "onSale": false,
-    "dailyDeal": false,
-    "bestseller": true,
-    "newArrival": false,
-    "categories": ["Non-Fiction", "Self-Help", "Productivity"],
-    "rating": 4.8,
-    "testimonials": [
-      {
-        "user": "HabitBuilder",
-        "comment": "This book changed the way I approach my daily routine. Highly recommend!"
-      },
-      {
-        "user": "ProductivityNerd",
-        "comment": "Clear's advice is practical, actionable, and life-changing."
-      }
-    ],
-    "image": "/images/atomichabits.jpeg"
-  },
-  {
-    "id": 9,
-    "title": "Becoming",
-    "author": "Michelle Obama",
-    "price": 16.99,
-    "oldPrice": 0,
-    "discount": "0%",
-    "description": "In her memoir, Michelle Obama chronicles her life from her childhood in Chicago to her years as First Lady of the United States.",
-    "trending": true,
-    "onSale": false,
-    "dailyDeal": false,
-    "bestseller": true,
-    "newArrival": true,
-    "categories": ["Non-Fiction", "Memoir", "Inspirational"],
-    "rating": 4.9,
-    "testimonials": [
-      {
-        "user": "InspirationSeeker",
-        "comment": "A deeply moving and empowering story. Michelle Obama is an inspiration."
-      },
-      {
-        "user": "MemoirFan",
-        "comment": "An intimate and honest look into the life of one of the most influential women of our time."
-      }
-    ],
-    "image": "/images/becoming.jpeg"
-  },
-  {
-    "id": 10,
-    "title": "1984",
-    "author": "George Orwell",
-    "price": 9.49,
-    "oldPrice": 0,
-    "discount": "0%",
-    "description": "A dystopian social science fiction novel and cautionary tale about the dangers of totalitarianism.",
-    "trending": false,
-    "onSale": false,
-    "dailyDeal": false,
-    "bestseller": true,
-    "newArrival": false,
-    "categories": ["Fiction", "Classics", "Science Fiction"],
-    "rating": 4.8,
-    "testimonials": [
-      {
-        "user": "DystopiaFan",
-        "comment": "A chilling portrayal of a world where freedom is a distant memory."
-      },
-      {
-        "user": "LiteratureLover",
-        "comment": "Orwell's vision of the future remains hauntingly relevant."
-      }
-    ],
-    "image": "/images/1984.jpeg"
-  },
-  {
-    "id": 11,
-    "title": "The Catcher in the Rye",
-    "author": "J.D. Salinger",
-    "price": 10.99,
-    "oldPrice": 0,
-    "discount": "0%",
-    "description": "The story of a few days in the life of Holden Caulfield, a troubled teenager navigating life in New York City.",
-    "trending": false,
-    "onSale": false,
-    "dailyDeal": false,
-    "bestseller": true,
-    "newArrival": false,
-    "categories": ["Fiction", "Classics", "Young Adult"],
-    "rating": 4.6,
-    "testimonials": [
-      {
-        "user": "TeenReader",
-        "comment": "Holden's struggles with society are still relatable today."
-      },
-      {
-        "user": "BookLover",
-        "comment": "A timeless classic that speaks to the rebellious spirit in all of us."
-      }
-    ],
-    "image": "/images/catcher.jpeg"
-  },
-  {
-    "id": 12,
-    "title": "Brave New World",
-    "author": "Aldous Huxley",
-    "price": 11.99,
-    "oldPrice": 0,
-    "discount": "0%",
-    "description": "A dystopian novel that explores the dangers of technology, consumerism, and totalitarianism.",
-    "trending": false,
-    "onSale": false,
-    "dailyDeal": false,
-    "bestseller": true,
-    "newArrival": false,
-    "categories": ["Fiction", "Classics", "Science Fiction"],
-    "rating": 4.7,
-    "testimonials": [
-      {
-        "user": "SciFiFan",
-        "comment": "A terrifying vision of the future that feels eerily possible."
-      },
-      {
-        "user": "ClassicReader",
-        "comment": "Huxley's insights into society are as relevant today as ever."
-      }
-    ],
-    "image": "/images/bravenewworld.jpeg"
-  },
-  {
-    "id": 13,
-    "title": "The Power of Habit",
-    "author": "Charles Duhigg",
-    "price": 13.49,
-    "oldPrice": 17.99,
-    "discount": "25%",
-    "description": "An exploration of how habits work and how they can be transformed to create positive change.",
-    "trending": true,
-    "onSale": true,
-    "dailyDeal": false,
-    "bestseller": false,
-    "newArrival": false,
-    "categories": ["Non-Fiction", "Self-Help", "Psychology"],
-    "rating": 4.7,
-    "testimonials": [
-      {
-        "user": "HabitChanger",
-        "comment": "A fascinating look at how small changes can lead to big results."
-      },
-      {
-        "user": "SelfImprovementFan",
-        "comment": "Duhigg's insights into habit formation are both practical and inspiring."
-      }
-    ],
-    "image": "/images/powerofhabit.jpeg"
-  },
-  {
-    "id": 14,
-    "title": "The Subtle Art of Not Giving a F*ck",
-    "author": "Mark Manson",
-    "price": 14.99,
-    "oldPrice": 0,
-    "discount": "0%",
-    "description": "A counterintuitive approach to living a good life by focusing on what really matters.",
-    "trending": true,
-    "onSale": false,
-    "dailyDeal": false,
-    "bestseller": true,
-    "newArrival": true,
-    "categories": ["Non-Fiction", "Self-Help", "Philosophy"],
-    "rating": 4.5,
-    "testimonials": [
-      {
-        "user": "RealTalkReader",
-        "comment": "Manson's no-nonsense approach is refreshing and brutally honest."
-      },
-      {
-        "user": "PhilosophyFan",
-        "comment": "A must-read for anyone looking to cut through the noise and focus on what truly matters."
-      }
-    ],
-    "image": "/images/subtleart.jpeg"
-  },
-  {
-    "id": 15,
-    "title": "Harry Potter and the Sorcerer's Stone",
-    "author": "J.K. Rowling",
-    "price": 9.99,
-    "oldPrice": 12.99,
-    "discount": "23%",
-    "description": "The magical adventure of Harry Potter as he discovers his true identity and begins his journey at Hogwarts School of Witchcraft and Wizardry.",
-    "trending": true,
-    "onSale": true,
-    "dailyDeal": true,
-    "bestseller": true,
-    "newArrival": false,
-    "categories": ["Fiction", "Fantasy", "Young Adult"],
-    "rating": 4.9,
-    "testimonials": [
-      {
-        "user": "FantasyFan",
-        "comment": "The start of a magical journey that captivated the world."
-      },
-      {
-        "user": "Bookworm",
-        "comment": "A timeless classic that appeals to readers of all ages."
-      }
-    ],
-    "image": "/images/harrypotter1.jpeg"
-  },
-  {
-    "id": 16,
-    "title": "The Hobbit",
-    "author": "J.R.R. Tolkien",
-    "price": 10.99,
-    "oldPrice": 14.99,
-    "discount": "26%",
-    "description": "The epic tale of Bilbo Baggins, a hobbit who embarks on an unexpected adventure filled with dragons, treasure, and the battle for Middle-earth.",
-    "trending": false,
-    "onSale": true,
-    "dailyDeal": false,
-    "bestseller": true,
-    "newArrival": false,
-    "categories": ["Fiction", "Fantasy", "Adventure"],
-    "rating": 4.8,
-    "testimonials": [
-      {
-        "user": "FantasyReader",
-        "comment": "A masterpiece of fantasy literature that transports you to another world."
-      },
-      {
-        "user": "AdventureLover",
-        "comment": "Tolkien's storytelling is unparalleled. A must-read for any fantasy fan."
-      }
-    ],
-    "image": "/images/hobbit.jpeg"
-  },
-  {
-    "id": 17,
-    "title": "The Road",
-    "author": "Cormac McCarthy",
-    "price": 11.99,
-    "oldPrice": 0,
-    "discount": "0%",
-    "description": "A harrowing tale of a father and son journeying through a post-apocalyptic landscape, struggling to survive and retain their humanity.",
-    "trending": false,
-    "onSale": false,
-    "dailyDeal": false,
-    "bestseller": false,
-    "newArrival": false,
-    "categories": ["Fiction", "Dystopian", "Literary"],
-    "rating": 4.6,
-    "testimonials": [
-      {
-        "user": "DystopiaFan",
-        "comment": "A haunting and powerful story of survival and hope."
-      },
-      {
-        "user": "LiteraryLover",
-        "comment": "McCarthy's prose is both beautiful and devastating. A true literary achievement."
-      }
-    ],
-    "image": "/images/road.jpeg"
-  },
-  {
-    "id": 18,
-    "title": "The Alchemist",
-    "author": "Paulo Coelho",
-    "price": 9.49,
-    "oldPrice": 0,
-    "discount": "0%",
-    "description": "A philosophical novel about a young shepherd's journey to find his personal legend and fulfill his dreams.",
-    "trending": true,
-    "onSale": false,
-    "dailyDeal": false,
-    "bestseller": true,
-    "newArrival": false,
-    "categories": ["Fiction", "Philosophy", "Spirituality"],
-    "rating":
-
- 4.7,
-    "testimonials": [
-      {
-        "user": "DreamChaser",
-        "comment": "A beautiful and inspiring story about following your dreams."
-      },
-      {
-        "user": "PhilosophyFan",
-        "comment": "Coelho's writing is simple yet profound. A must-read for anyone on a journey of self-discovery."
-      }
-    ],
-    "image": "/images/alchemist.jpeg"
-  },
-  {
-    "id": 19,
-    "title": "The Girl on the Train",
-    "author": "Paula Hawkins",
-    "price": 8.99,
-    "oldPrice": 11.99,
-    "discount": "25%",
-    "description": "A psychological thriller about a woman who becomes entangled in a missing persons investigation that will change her life forever.",
-    "trending": false,
-    "onSale": true,
-    "dailyDeal": false,
-    "bestseller": false,
-    "newArrival": false,
-    "categories": ["Fiction", "Mystery", "Thriller"],
-    "rating": 4.4,
-    "testimonials": [
-      {
-        "user": "ThrillerFan",
-        "comment": "A gripping and suspenseful read that keeps you guessing until the end."
-      },
-      {
-        "user": "MysteryLover",
-        "comment": "Hawkins' writing is intense and full of twists. A must-read for thriller fans."
-      }
-    ],
-    "image": "/images/girlontrain.jpeg"
-  },
-  {
-    "id": 20,
-    "title": "The Shining",
-    "author": "Stephen King",
-    "price": 12.99,
-    "oldPrice": 0,
-    "discount": "0%",
-    "description": "A horror novel about a family trapped in an isolated hotel, where supernatural forces push the father into violence.",
-    "trending": true,
-    "onSale": false,
-    "dailyDeal": false,
-    "bestseller": false,
-    "newArrival": false,
-    "categories": ["Fiction", "Horror", "Thriller"],
-    "rating": 4.8,
-    "testimonials": [
-      {
-        "user": "HorrorFan",
-        "comment": "King's storytelling is masterful. A terrifying and unforgettable read."
-      },
-      {
-        "user": "ThrillerLover",
-        "comment": "The Shining is a horror classic that still sends chills down my spine."
-      }
-    ],
-    "image": "/images/shining.jpeg"
-  }
+	{
+		"id": 1,
+		"title": "The Great Gatsby",
+		"author": "F. Scott Fitzgerald",
+		"price": 10.99,
+		"oldPrice": 14.99,
+		"initialQuantity": 1,
+		"totalQuantity": 1,
+		"inStock": 10,
+		"discount": "26%",
+		"description": "A classic novel of the Roaring Twenties, The Great Gatsby tells the story of the mysterious millionaire Jay Gatsby and his obsession with the beautiful Daisy Buchanan.",
+		"trending": true,
+		"onSale": true,
+		"dailyDeal": false,
+		"bestseller": true,
+		"newArrival": false,
+		"categories": ["Fiction", "Classics"],
+		"rating": 4.7,
+		"testimonials": [
+			{
+				"user": "LiteraryLover",
+				"comment": "A mesmerizing tale of wealth, love, and the American Dream. Truly timeless!"
+			},
+			{
+				"user": "HistoryBuff",
+				"comment": "Gatsby's world feels so real, it's like stepping back in time."
+			}
+		],
+		"image": "/images/gatsby.jpeg"
+	},
+	{
+		"id": 2,
+		"title": "To Kill a Mockingbird",
+		"author": "Harper Lee",
+		"price": 8.99,
+		"oldPrice": 12.99,
+		"initialQuantity": 1,
+		"totalQuantity": 1,
+		"inStock": 10,
+		"discount": "31%",
+		"description": "Harper Lee's Pulitzer Prize-winning novel about racial injustice in the Deep South, as seen through the eyes of young Scout Finch.",
+		"trending": true,
+		"onSale": true,
+		"dailyDeal": true,
+		"bestseller": true,
+		"newArrival": false,
+		"categories": ["Fiction", "Classics", "Historical"],
+		"rating": 4.9,
+		"testimonials": [
+			{
+				"user": "JusticeSeeker",
+				"comment": "An essential read that sheds light on the enduring struggles against racism."
+			},
+			{
+				"user": "Bookworm22",
+				"comment": "Beautifully written, deeply moving, and as relevant today as ever."
+			}
+		],
+		"image": "/images/mockingbird.jpeg"
+	},
+	{
+		"id": 3,
+		"title": "The Da Vinci Code",
+		"author": "Dan Brown",
+		"price": 12.99,
+		"oldPrice": 16.99,
+		"initialQuantity": 1,
+		"totalQuantity": 1,
+		"inStock": 10,
+		"discount": "24%",
+		"description": "A mind-bending thriller that takes you on a chase through the heart of Europe, unraveling a secret that has been hidden for centuries.",
+		"trending": true,
+		"onSale": true,
+		"dailyDeal": false,
+		"bestseller": false,
+		"newArrival": false,
+		"categories": ["Mystery", "Thriller", "Fiction"],
+		"rating": 4.5,
+		"testimonials": [
+			{
+				"user": "ThrillerFan",
+				"comment": "A page-turner from start to finish! The twists and turns never stop."
+			},
+			{
+				"user": "MysteryLover",
+				"comment": "Dan Brown's best work. It's hard to put down once you start."
+			}
+		],
+		"image": "/images/davinci.jpeg"
+	},
+	{
+		"id": 4,
+		"title": "Sapiens: A Brief History of Humankind",
+		"author": "Yuval Noah Harari",
+		"price": 15.99,
+		"oldPrice": 0,
+		"initialQuantity": 1,
+		"totalQuantity": 1,
+		"inStock": 10,
+		"discount": "0%",
+		"description": "An exploration of the history of our species, from the earliest humans to the modern age, offering profound insights into who we are and where we are going.",
+		"trending": false,
+		"onSale": false,
+		"dailyDeal": false,
+		"bestseller": true,
+		"newArrival": false,
+		"categories": ["Non-Fiction", "History", "Science"],
+		"rating": 4.8,
+		"testimonials": [
+			{
+				"user": "HistoryGeek",
+				"comment": "A fascinating look at human history that changes how you see the world."
+			},
+			{
+				"user": "ScienceNerd",
+				"comment": "Harari's writing is both engaging and thought-provoking. A must-read!"
+			}
+		],
+		"image": "/images/sapiens.jpeg"
+	},
+	{
+		"id": 5,
+		"title": "The Silent Patient",
+		"author": "Alex Michaelides",
+		"price": 9.99,
+		"oldPrice": 14.99,
+		"initialQuantity": 1,
+		"totalQuantity": 1,
+		"inStock": 10,
+		"discount": "33%",
+		"description": "A psychological thriller about a woman who shoots her husband and then refuses to speak another word. The story unfolds as a psychotherapist tries to unravel the mystery.",
+		"trending": true,
+		"onSale": true,
+		"dailyDeal": true,
+		"bestseller": false,
+		"newArrival": false,
+		"categories": ["Fiction", "Mystery", "Thriller"],
+		"rating": 4.6,
+		"testimonials": [
+			{
+				"user": "PsychThrillerFan",
+				"comment": "Absolutely gripping! The plot twists left me speechless."
+			},
+			{
+				"user": "NovelAddict",
+				"comment": "A dark, intense read that will keep you guessing until the very end."
+			}
+		],
+		"image": "/images/silentpatient.jpeg"
+	},
+	{
+		"id": 6,
+		"title": "Educated",
+		"author": "Tara Westover",
+		"price": 13.99,
+		"oldPrice": 0,
+		"initialQuantity": 1,
+		"totalQuantity": 1,
+		"inStock": 10,
+		"discount": "0%",
+		"description": "A memoir about a woman who grew up in a strict and abusive household in rural Idaho but eventually escapes to learn about the world through education.",
+		"trending": true,
+		"onSale": false,
+		"dailyDeal": false,
+		"bestseller": true,
+		"newArrival": false,
+		"categories": ["Non-Fiction", "Memoir", "Inspirational"],
+		"rating": 4.9,
+		"testimonials": [
+			{
+				"user": "MemoirReader",
+				"comment": "An incredibly powerful story of resilience and the transformative power of education."
+			},
+			{
+				"user": "InspirationSeeker",
+				"comment": "Tara Westover's journey is nothing short of inspiring."
+			}
+		],
+		"image": "/images/educated.jpeg"
+	},
+	{
+		"id": 7,
+		"title": "Where the Crawdads Sing",
+		"author": "Delia Owens",
+		"price": 11.99,
+		"oldPrice": 14.99,
+		"initialQuantity": 1,
+		"totalQuantity": 1,
+		"inStock": 10,
+		"discount": "20%",
+		"description": "A haunting tale of a young woman growing up in the marshlands of North Carolina, blending mystery, love, and survival.",
+		"trending": true,
+		"onSale": true,
+		"dailyDeal": false,
+		"bestseller": true,
+		"newArrival": false,
+		"categories": ["Fiction", "Mystery", "Romance"],
+		"rating": 4.7,
+		"testimonials": [
+			{
+				"user": "NatureLover",
+				"comment": "The descriptions of the marsh are so vivid, it feels like you're there."
+			},
+			{
+				"user": "MysteryFan",
+				"comment": "A beautiful story with an unexpected twist. A must-read!"
+			}
+		],
+		"image": "/images/crawdads.jpeg"
+	},
+	{
+		"id": 8,
+		"title": "Atomic Habits",
+		"author": "James Clear",
+		"price": 14.99,
+		"oldPrice": 0,
+		"initialQuantity": 1,
+		"totalQuantity": 1,
+		"inStock": 10,
+		"discount": "0%",
+		"description": "An insightful guide to building good habits and breaking bad ones, with practical strategies for achieving long-term success.",
+		"trending": false,
+		"onSale": false,
+		"dailyDeal": false,
+		"bestseller": true,
+		"newArrival": false,
+		"categories": ["Non-Fiction", "Self-Help", "Productivity"],
+		"rating": 4.8,
+		"testimonials": [
+			{
+				"user": "HabitBuilder",
+				"comment": "This book changed the way I approach my daily routine. Highly recommend!"
+			},
+			{
+				"user": "ProductivityNerd",
+				"comment": "Clear's advice is practical, actionable, and life-changing."
+			}
+		],
+		"image": "/images/atomichabits.jpeg"
+	},
+	{
+		"id": 9,
+		"title": "Becoming",
+		"author": "Michelle Obama",
+		"price": 16.99,
+		"oldPrice": 0,
+		"initialQuantity": 1,
+		"totalQuantity": 1,
+		"inStock": 10,
+		"discount": "0%",
+		"description": "In her memoir, Michelle Obama chronicles her life from her childhood in Chicago to her years as First Lady of the United States.",
+		"trending": true,
+		"onSale": false,
+		"dailyDeal": false,
+		"bestseller": true,
+		"newArrival": true,
+		"categories": ["Non-Fiction", "Memoir", "Inspirational"],
+		"rating": 4.9,
+		"testimonials": [
+			{
+				"user": "InspirationSeeker",
+				"comment": "A deeply moving and empowering story. Michelle Obama is an inspiration."
+			},
+			{
+				"user": "MemoirFan",
+				"comment": "An intimate and honest look into the life of one of the most influential women of our time."
+			}
+		],
+		"image": "/images/becoming.jpeg"
+	},
+	{
+		"id": 10,
+		"title": "1984",
+		"author": "George Orwell",
+		"price": 9.49,
+		"oldPrice": 0,
+		"initialQuantity": 1,
+		"totalQuantity": 1,
+		"inStock": 10,
+		"discount": "0%",
+		"description": "A dystopian social science fiction novel and cautionary tale about the dangers of totalitarianism.",
+		"trending": false,
+		"onSale": false,
+		"dailyDeal": false,
+		"bestseller": true,
+		"newArrival": false,
+		"categories": ["Fiction", "Classics", "Science Fiction"],
+		"rating": 4.8,
+		"testimonials": [
+			{
+				"user": "DystopiaFan",
+				"comment": "A chilling portrayal of a world where freedom is a distant memory."
+			},
+			{
+				"user": "LiteratureLover",
+				"comment": "Orwell's vision of the future remains hauntingly relevant."
+			}
+		],
+		"image": "/images/1984.jpeg"
+	},
+	{
+		"id": 11,
+		"title": "The Catcher in the Rye",
+		"author": "J.D. Salinger",
+		"price": 10.99,
+		"oldPrice": 0,
+		"initialQuantity": 1,
+		"totalQuantity": 1,
+		"inStock": 10,
+		"discount": "0%",
+		"description": "The story of a few days in the life of Holden Caulfield, a troubled teenager navigating life in New York City.",
+		"trending": false,
+		"onSale": false,
+		"dailyDeal": false,
+		"bestseller": true,
+		"newArrival": false,
+		"categories": ["Fiction", "Classics", "Young Adult"],
+		"rating": 4.6,
+		"testimonials": [
+			{
+				"user": "TeenReader",
+				"comment": "Holden's struggles with society are still relatable today."
+			},
+			{
+				"user": "BookLover",
+				"comment": "A timeless classic that speaks to the rebellious spirit in all of us."
+			}
+		],
+		"image": "/images/catcher.jpeg"
+	},
+	{
+		"id": 12,
+		"title": "Brave New World",
+		"author": "Aldous Huxley",
+		"price": 11.99,
+		"oldPrice": 0,
+		"initialQuantity": 1,
+		"totalQuantity": 1,
+		"inStock": 10,
+		"discount": "0%",
+		"description": "A dystopian novel that explores the dangers of technology, consumerism, and totalitarianism.",
+		"trending": false,
+		"onSale": false,
+		"dailyDeal": false,
+		"bestseller": true,
+		"newArrival": false,
+		"categories": ["Fiction", "Classics", "Science Fiction"],
+		"rating": 4.7,
+		"testimonials": [
+			{
+				"user": "SciFiFan",
+				"comment": "A terrifying vision of the future that feels eerily possible."
+			},
+			{
+				"user": "ClassicReader",
+				"comment": "Huxley's insights into society are as relevant today as ever."
+			}
+		],
+		"image": "/images/bravenewworld.jpeg"
+	},
+	{
+		"id": 13,
+		"title": "The Power of Habit",
+		"author": "Charles Duhigg",
+		"price": 13.49,
+		"oldPrice": 17.99,
+		"initialQuantity": 1,
+		"totalQuantity": 1,
+		"inStock": 10,
+		"discount": "25%",
+		"description": "An exploration of how habits work and how they can be transformed to create positive change.",
+		"trending": true,
+		"onSale": true,
+		"dailyDeal": false,
+		"bestseller": false,
+		"newArrival": false,
+		"categories": ["Non-Fiction", "Self-Help", "Psychology"],
+		"rating": 4.7,
+		"testimonials": [
+			{
+				"user": "HabitChanger",
+				"comment": "A fascinating look at how small changes can lead to big results."
+			},
+			{
+				"user": "SelfImprovementFan",
+				"comment": "Duhigg's insights into habit formation are both practical and inspiring."
+			}
+		],
+		"image": "/images/powerofhabit.jpeg"
+	},
+	{
+		"id": 14,
+		"title": "The Subtle Art of Not Giving a F*ck",
+		"author": "Mark Manson",
+		"price": 14.99,
+		"oldPrice": 0,
+		"initialQuantity": 1,
+		"totalQuantity": 1,
+		"inStock": 10,
+		"discount": "0%",
+		"description": "A counterintuitive approach to living a good life by focusing on what really matters.",
+		"trending": true,
+		"onSale": false,
+		"dailyDeal": false,
+		"bestseller": true,
+		"newArrival": true,
+		"categories": ["Non-Fiction", "Self-Help", "Philosophy"],
+		"rating": 4.5,
+		"testimonials": [
+			{
+				"user": "RealTalkReader",
+				"comment": "Manson's no-nonsense approach is refreshing and brutally honest."
+			},
+			{
+				"user": "PhilosophyFan",
+				"comment": "A must-read for anyone looking to cut through the noise and focus on what truly matters."
+			}
+		],
+		"image": "/images/subtleart.jpeg"
+	},
+	{
+		"id": 15,
+		"title": "Harry Potter and the Sorcerer's Stone",
+		"author": "J.K. Rowling",
+		"price": 9.99,
+		"oldPrice": 12.99,
+		"initialQuantity": 1,
+		"totalQuantity": 1,
+		"inStock": 10,
+		"discount": "23%",
+		"description": "The magical adventure of Harry Potter as he discovers his true identity and begins his journey at Hogwarts School of Witchcraft and Wizardry.",
+		"trending": true,
+		"onSale": true,
+		"dailyDeal": true,
+		"bestseller": true,
+		"newArrival": false,
+		"categories": ["Fiction", "Fantasy", "Young Adult"],
+		"rating": 4.9,
+		"testimonials": [
+			{
+				"user": "FantasyFan",
+				"comment": "The start of a magical journey that captivated the world."
+			},
+			{
+				"user": "Bookworm",
+				"comment": "A timeless classic that appeals to readers of all ages."
+			}
+		],
+		"image": "/images/harrypotter1.jpeg"
+	},
+	{
+		"id": 16,
+		"title": "The Hobbit",
+		"author": "J.R.R. Tolkien",
+		"price": 10.99,
+		"oldPrice": 14.99,
+		"initialQuantity": 1,
+		"totalQuantity": 1,
+		"inStock": 10,
+		"discount": "26%",
+		"description": "The epic tale of Bilbo Baggins, a hobbit who embarks on an unexpected adventure filled with dragons, treasure, and the battle for Middle-earth.",
+		"trending": false,
+		"onSale": true,
+		"dailyDeal": false,
+		"bestseller": true,
+		"newArrival": false,
+		"categories": ["Fiction", "Fantasy", "Adventure"],
+		"rating": 4.8,
+		"testimonials": [
+			{
+				"user": "FantasyReader",
+				"comment": "A masterpiece of fantasy literature that transports you to another world."
+			},
+			{
+				"user": "AdventureLover",
+				"comment": "Tolkien's storytelling is unparalleled. A must-read for any fantasy fan."
+			}
+		],
+		"image": "/images/hobbit.jpeg"
+	},
+	{
+		"id": 17,
+		"title": "The Road",
+		"author": "Cormac McCarthy",
+		"price": 11.99,
+		"oldPrice": 0,
+		"initialQuantity": 1,
+		"totalQuantity": 1,
+		"inStock": 10,
+		"discount": "0%",
+		"description": "A harrowing tale of a father and son journeying through a post-apocalyptic landscape, struggling to survive and retain their humanity.",
+		"trending": false,
+		"onSale": false,
+		"dailyDeal": false,
+		"bestseller": false,
+		"newArrival": false,
+		"categories": ["Fiction", "Dystopian", "Literary"],
+		"rating": 4.6,
+		"testimonials": [
+			{
+				"user": "DystopiaFan",
+				"comment": "A haunting and powerful story of survival and hope."
+			},
+			{
+				"user": "LiteraryLover",
+				"comment": "McCarthy's prose is both beautiful and devastating. A true literary achievement."
+			}
+		],
+		"image": "/images/road.jpeg"
+	},
+	{
+		"id": 18,
+		"title": "The Alchemist",
+		"author": "Paulo Coelho",
+		"price": 9.49,
+		"oldPrice": 0,
+		"initialQuantity": 1,
+		"totalQuantity": 1,
+		"inStock": 10,
+		"discount": "0%",
+		"description": "A philosophical novel about a young shepherd's journey to find his personal legend and fulfill his dreams.",
+		"trending": true,
+		"onSale": false,
+		"dailyDeal": false,
+		"bestseller": true,
+		"newArrival": false,
+		"categories": ["Fiction", "Philosophy", "Spirituality"],
+		"rating": 4.7,
+		"testimonials": [
+			{
+				"user": "DreamChaser",
+				"comment": "A beautiful and inspiring story about following your dreams."
+			},
+			{
+				"user": "PhilosophyFan",
+				"comment": "Coelho's writing is simple yet profound. A must-read for anyone on a journey of self-discovery."
+			}
+		],
+		"image": "/images/alchemist.jpeg"
+	},
+	{
+		"id": 19,
+		"title": "The Girl on the Train",
+		"author": "Paula Hawkins",
+		"price": 8.99,
+		"oldPrice": 11.99,
+		"initialQuantity": 1,
+		"totalQuantity": 1,
+		"inStock": 10,
+		"discount": "25%",
+		"description": "A psychological thriller about a woman who becomes entangled in a missing persons investigation that will change her life forever.",
+		"trending": false,
+		"onSale": true,
+		"dailyDeal": false,
+		"bestseller": false,
+		"newArrival": false,
+		"categories": ["Fiction", "Mystery", "Thriller"],
+		"rating": 4.4,
+		"testimonials": [
+			{
+				"user": "ThrillerFan",
+				"comment": "A gripping and suspenseful read that keeps you guessing until the end."
+			},
+			{
+				"user": "MysteryLover",
+				"comment": "Hawkins' writing is intense and full of twists. A must-read for thriller fans."
+			}
+		],
+		"image": "/images/girlontrain.jpeg"
+	},
+	{
+		"id": 20,
+		"title": "The Shining",
+		"author": "Stephen King",
+		"price": 12.99,
+		"oldPrice": 0,
+		"initialQuantity": 1,
+		"totalQuantity": 1,
+		"inStock": 10,
+		"discount": "0%",
+		"description": "A horror novel about a family trapped in an isolated hotel, where supernatural forces push the father into violence.",
+		"trending": true,
+		"onSale": false,
+		"dailyDeal": false,
+		"bestseller": false,
+		"newArrival": false,
+		"categories": ["Fiction", "Horror", "Thriller"],
+		"rating": 4.8,
+		"testimonials": [
+			{
+				"user": "HorrorFan",
+				"comment": "King's storytelling is masterful. A terrifying and unforgettable read."
+			},
+			{
+				"user": "ThrillerLover",
+				"comment": "The Shining is a horror classic that still sends chills down my spine."
+			}
+		],
+		"image": "/images/shining.jpeg"
+	}
 ]

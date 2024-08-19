@@ -2,33 +2,31 @@ import { FaNairaSign } from "react-icons/fa6";
 import { useBooks } from "../context/BooksContext";
 import styles from "./Wishlist.module.css";
 import { IoCloseCircle } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import Message from "../components/message/Message";
 
 function Wishlist() {
-	const { wishlist, removeWishlist, updateCart } = useBooks();
+	const { wishlist, removeWishlist, moveToCart } = useBooks();
 
 
 	function handleDeleteWishlist(id) {
 		removeWishlist(id)
 	 }
-	function handleAddToCart(book) {
-		updateCart(book)
+	function handleMoveToCart(book) {
+		moveToCart(book)
 	 }
 
 	return (
 		<main className={styles.container}>
 			<h1 className={styles.title}>Wishlist</h1>
 			<section className={styles.content}>
-				{wishlist.length === 0 && <section className={styles.message}>
-					<p>Your cart is empty.</p>
-					<Link to="/books" className={`${styles.btn} ${styles.btnLink}`}>Start Shopping</Link>
-				</section>}
+				{/* ! NOTIFIES THE USER THAT CART IS EMPTY */}
+				{wishlist.length === 0 && <Message text="wishlist"/>}
+
 
 				{wishlist.length !== 0 && <ul className={styles.cart}>
 					<li key="listHeader">
 						<p>Products</p>
 						<p>Price</p>
-						{/* <p>Stock Status</p> */}
 					</li>
 					{wishlist.map(book => <li key={book.id} className={styles.cartItem}>
 						<section className={styles.cartItem__profile}>
@@ -52,7 +50,7 @@ function Wishlist() {
 								<FaNairaSign /> <span>{book.price}</span>
 							</p>
 						</section>
-						<button className={styles.btn} onClick={()=> handleAddToCart(book)}>Add To Cart</button>
+						<button className={styles.btn} onClick={()=> handleMoveToCart(book)}>Move To Cart</button>
 					</li>)}
 
 				</ul>}

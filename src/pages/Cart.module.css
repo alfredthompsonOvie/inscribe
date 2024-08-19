@@ -12,9 +12,15 @@
   font-family: var(--ff-brand);
 }
 .message {
+  grid-column: 1/-1;
   text-align: center;
   font-size: 2rem;
   font-style: italic;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .cart {
@@ -101,28 +107,11 @@
 	align-items: center;
 	gap: 0.5em;
 	border-radius: 0.2em;
-	/* border: 1px solid rgba(255, 255, 255, 0.4); */
+	border: 1px solid rgba(255, 255, 255, 0.4);
 	width: max-content;
 	padding: 0.5em;
   font-family: var(--ff-brand);
 }
-.summary {
-	background-color: rgba(0, 0, 0, 0.1);
-  border-radius: .5em;
-  padding: 1em;
-}
-.summary ul {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-  margin-top: 1em;
-}
-.summary li, .summary p {
-	display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 
 .btn {
   position: relative;
@@ -162,9 +151,6 @@
   box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.3);
   transition: 0.3s;
 }
-/* .btn:hover{
-  clip-path: polygon(5.5% 0, 100% 0, 100% 100%, 75% 100%, 0 99%, 0 76%);
-} */
 
 
 .btn:hover::before {
@@ -180,6 +166,7 @@
 .delBtn:hover svg{
   color: var(--cta)
 }
+
 
 
 

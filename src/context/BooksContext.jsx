@@ -7,8 +7,8 @@ const initialState = {
 	books: [],
 	isLoading: false,
 	error: "",
-	wishlist: [],
-	cart: [],
+	wishlist: JSON.parse(localStorage.getItem("wishlist"))  || [],
+	cart: JSON.parse(localStorage.getItem("cart")) || [],
 };
 
 function reducer(state, action) {
@@ -17,42 +17,59 @@ function reducer(state, action) {
 			return { ...state, isLoading: true };
 		case "books/loaded":
 			return { ...state, isLoading: false, books: action.payload };
-		case "wishlist/updated":
+		case "wishlist/updated": {
+			const modifiedWishlist = [...state.wishlist, action.payload];
+			localStorage.setItem("wishlist", JSON.stringify(modifiedWishlist));
+
 			return {
 				...state,
 				isLoading: false,
-				wishlist: [...state.wishlist, action.payload],
+				wishlist: modifiedWishlist,
 			};
-		case "wishlist/deleted":
+		}
+		case "wishlist/deleted": {
+			const modifiedWishlist = action.payload;
+			localStorage.setItem("wishlist", JSON.stringify(modifiedWishlist));
 			return {
 				...state,
 				isLoading: false,
-				wishlist: action.payload,
+				wishlist: modifiedWishlist,
 			};
-		case "cart/added":
+		}
+		case "cart/added": {
+			const modifiedCart = [...state.cart, action.payload];
+			localStorage.setItem("cart", JSON.stringify(modifiedCart));
 			return {
 				...state,
 				isLoading: false,
-				cart: [...state.cart, action.payload],
+				cart: modifiedCart,
 			};
-		case "cart/updated":
+		}
+		case "cart/updated": {
+			const modifiedCart = action.payload;
+			localStorage.setItem("cart", JSON.stringify(modifiedCart));
 			return {
 				...state,
 				isLoading: false,
-				cart: action.payload,
+				cart: modifiedCart,
 			};
-			case "cart/deleted":
-				return {
-					...state,
-					isLoading: false,
-					cart: action.payload,
-				};
-			case "cart/reset":
-				return {
-					...state,
-					isLoading: false,
-					cart: [],
-				};
+		}
+		case "cart/deleted": {
+			const modifiedCart = action.payload;
+			localStorage.setItem("cart", JSON.stringify(modifiedCart));
+			return {
+				...state,
+				isLoading: false,
+				cart: modifiedCart,
+			};
+		}
+		case "cart/reset":
+			localStorage.removeItem("cart");
+			return {
+				...state,
+				isLoading: false,
+				cart: [],
+			};
 
 		default:
 			throw new Error("Unknown action type");
@@ -68,7 +85,6 @@ function BooksProvider({ children }) {
 	useEffect(() => {
 		dispatch({ type: "loading" });
 		async function getBooks() {
-
 			try {
 				const res = await fetch("/data/data.json");
 				const data = await res.json();
@@ -82,93 +98,100 @@ function BooksProvider({ children }) {
 	}, []);
 
 	function updateWishlist(data) {
-		console.log(data)
 		const isInWishlist = wishlist?.some((book) => book.id === data.id);
-		console.log("updated wishlist", isInWishlist, data, wishlist);
+
 		if (isInWishlist) return;
 
 		dispatch({ type: "wishlist/updated", payload: data });
 	}
 	function removeWishlist(id) {
-		const newWishlist = wishlist.filter(book => book.id !== id)
+		const newWishlist = wishlist.filter((book) => book.id !== id);
 
 		dispatch({ type: "wishlist/deleted", payload: newWishlist });
 	}
-	function addToCart(data) {
-		const isInCart = cart.some(book => book.id === data.id);
 
-		console.log("is in cart", isInCart)
-		
-		if (!isInCart) { 
-			console.log("added to cart", isInCart)
-			
+	// ! CART API================================
+
+	function addToCart(data) {
+		const isInCart = cart.some((book) => book.id === data.id);
+
+		if (!isInCart) {
 			dispatch({ type: "cart/added", payload: data });
 			return;
 		}
-		console.log("already in cart", isInCart)
 	}
+
 	function updateCart(data) {
 		let updatedCart;
-		
-		const isInCart = cart.some(book => book.id === data.id);
-		console.log("updateCart=> is in cart", isInCart, data, cart)
-		
+
+		const isInCart = cart.some((book) => book.id === data.id);
+		console.log("updateCart=> is in cart", isInCart, data, cart);
+
+		// ! if is in cart update cart
 		if (isInCart) {
-			updatedCart = cart.map(book => {
+			updatedCart = cart.map((book) => {
 				if (book.id === data.id) {
 					return data;
 				}
 				return book;
-			})
-			
+			});
+
 			console.log("updatedCart=> modified cart", updatedCart);
 			dispatch({ type: "cart/updated", payload: updatedCart });
 
 			return;
 		}
-		
+
+		// ! if is NOT in cart then add to cart
 		if (!isInCart) {
 			dispatch({ type: "cart/added", payload: data });
 			console.log("from updateCart adding new book => modified cart", data);
 
 			return;
 		}
-
-
-		
-		// console.log("is in cart", isInCart)
-
-
-		// const updatedBook = cart.map(book => {
-		// 	if (book.id === data.id) {
-		// 		return data;
-		// 	}
-		// 	return book;
-		// })
-
-		console.log(updatedCart)
-	
-		// dispatch({ type: "cart/updated", payload: updatedBook });
 	}
-	// function updateCartByIdByIncrease(id) {
-	// 	const updatedCart = cart.map(book => {
-	// 		if (book.id === id) {
-	// 			return {...book, quantity: book.quantity +1};	
-	// 		}
-	// 		return book;
-	// 	})
+	function updateCartByIncreasingQuantity(id) {
+		const modified = cart.map((book) => {
+			if (book.id === id) {
+				book.totalQuantity += 1;
+				book.totalPrice = book.price * book.totalQuantity;
+			}
+			return book;
+		});
 
+		dispatch({ type: "cart/updated", payload: modified });
+	}
 
-	// }
+	function updateCartByDecreasingQuantity(id) {
+		const modified = cart.map((book) => {
+			if (book.id === id && book.totalQuantity === 1) {
+				console.log("quantity === 1");
+				return book;
+			}
+
+			if (book.id === id && book.totalQuantity !== 1) {
+				book.totalQuantity -= 1;
+				book.totalPrice = book.price * book.totalQuantity;
+			}
+			return book;
+		});
+
+		dispatch({ type: "cart/updated", payload: modified });
+	}
+
 	function removeCart(id) {
-		const newCart = cart.filter(book => book.id !== id)
+		const newCart = cart.filter((book) => book.id !== id);
 		dispatch({ type: "cart/deleted", payload: newCart });
 	}
 	function resetCart() {
-
 		dispatch({ type: "cart/reset" });
 	}
 
+	// ! move items from wishlist to cart
+	function moveToCart(book) {
+		addToCart(book);
+		removeWishlist(book.id);
+	}
 
 	return (
 		<BooksContext.Provider
@@ -180,10 +203,12 @@ function BooksProvider({ children }) {
 				addToCart,
 				updateCart,
 				resetCart,
-				// updateCartByIdByIncrease,
+				updateCartByIncreasingQuantity,
+				updateCartByDecreasingQuantity,
 				updateWishlist,
 				removeWishlist,
-				removeCart
+				removeCart,
+				moveToCart
 			}}
 		>
 			{children}

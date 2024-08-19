@@ -1,4 +1,3 @@
-
 import styles from "./Checkout.module.css";
 
 import { FaNairaSign } from "react-icons/fa6";
@@ -8,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useBooks } from "../context/BooksContext";
 import { useForm } from "react-hook-form";
+import Summary from "../components/summary/Summary";
 
 const SHIPPING_FEE = 50;
 const VAT = 10;
@@ -19,21 +19,21 @@ function Checkout() {
 
 	// ! SUMMARY CALCULATION
 	const total = cart.reduce((acc, cur) => acc + cur.totalPrice, 0);
-	const grandTotalCalculation = total + SHIPPING_FEE + VAT; 
-	const grandTotal = grandTotalCalculation.toFixed(2);
+	const grandTotalCalculation = total + SHIPPING_FEE + VAT;
+	const grandTotal = grandTotalCalculation;
 
 	// ! THANK YOU MODAL
 	const firstBookInCart = cart.slice(0, 1)[0];
-	console.log(firstBookInCart)
-	const numberOfItemsLeft = cart.slice(1).length
+	console.log(firstBookInCart);
+	const numberOfItemsLeft = cart.slice(1).length;
 
 	// ! FORM VALIDATION
-	const { register, handleSubmit, watch, reset } = useForm()
-	
+	const { register, handleSubmit, watch, reset } = useForm();
+
 	const paymentMethod = watch("paymentMethod");
 
 	const onSubmit = (data) => {
-		console.log(data)
+		console.log(data);
 		setIsOpen(true);
 		reset();
 	};
@@ -41,16 +41,19 @@ function Checkout() {
 	// ! MODAL
 	function handleModal() {
 		setIsOpen(false);
-		resetCart()
-		navigate("/")
+		resetCart();
+		navigate("/");
 	}
-
-
 
 	return (
 		<main className={styles.container}>
 			<section className={styles.content}>
-				<button className={`${styles.btn} ${styles.backBtn}`} onClick={()=> navigate(-1)}>Go Back</button>
+				<button
+					className={`${styles.btn} ${styles.backBtn}`}
+					onClick={() => navigate(-1)}
+				>
+					Go Back
+				</button>
 
 				<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 					<section className={styles.fieldset__group}>
@@ -65,7 +68,7 @@ function Checkout() {
 										id="name"
 										placeholder="alfred thompson ovie"
 										required
-										{...register("name", {required: true})}
+										{...register("name", { required: true })}
 									/>
 								</section>
 								<section className={styles.form__group}>
@@ -75,7 +78,7 @@ function Checkout() {
 										id="email"
 										placeholder="alfredthompsonovie@gmail.com"
 										required
-										{...register("email", {required: true})}
+										{...register("email", { required: true })}
 									/>
 								</section>
 								<section className={styles.form__group}>
@@ -85,7 +88,7 @@ function Checkout() {
 										id="tel"
 										placeholder="+2348073328875"
 										required
-										{...register("tel", {required: true})}
+										{...register("tel", { required: true })}
 									/>
 								</section>
 							</section>
@@ -101,7 +104,7 @@ function Checkout() {
 									id="address"
 									placeholder="abc lekki lagos"
 									required
-									{...register("address", {required: true})}
+									{...register("address", { required: true })}
 								/>
 							</section>
 
@@ -113,12 +116,18 @@ function Checkout() {
 										id="zipCode"
 										placeholder="101241"
 										required
-										{...register("zipCode", {required: true})}
+										{...register("zipCode", { required: true })}
 									/>
 								</section>
 								<section className={styles.form__group}>
 									<label htmlFor="city">City</label>
-									<input type="text" id="city" placeholder="lagos" required {...register("city", {required: true})} />
+									<input
+										type="text"
+										id="city"
+										placeholder="lagos"
+										required
+										{...register("city", { required: true })}
+									/>
 								</section>
 								<section className={styles.form__group}>
 									<label htmlFor="country">Country</label>
@@ -127,7 +136,7 @@ function Checkout() {
 										id="country"
 										placeholder="Nigeria"
 										required
-										{...register("country", {required: true})}
+										{...register("country", { required: true })}
 									/>
 								</section>
 							</section>
@@ -142,10 +151,9 @@ function Checkout() {
 									<input
 										type="radio"
 										id="creditCard"
-
 										required
 										value="payOnline"
-										{...register("paymentMethod", {required: true})}
+										{...register("paymentMethod", { required: true })}
 									/>
 									<label htmlFor="creditCard">e-Money</label>
 								</section>
@@ -155,10 +163,9 @@ function Checkout() {
 									<input
 										type="radio"
 										id="paymentOnDelivery"
-
 										value="paymentOnDelivery"
 										required
-										{...register("paymentMethod", {required: true})}
+										{...register("paymentMethod", { required: true })}
 									/>
 									<label htmlFor="paymentOnDelivery">Cash on Delivery</label>
 								</section>
@@ -166,69 +173,84 @@ function Checkout() {
 						</fieldset>
 
 						<section>
-							{paymentMethod === "payOnline" && <section className={styles.creditCard}>
-								<section className={`${styles.form__group} ${styles.cardName}`}>
-									<label htmlFor="nameOnCard">Name on Card</label>
-									<input
-										type="text"
-										id="nameOnCard"
-										placeholder="alfred thompson ovie"
-										required
-										{...register("nameOnCard", {required: true})}
-									/>
+							{paymentMethod === "payOnline" && (
+								<section className={styles.creditCard}>
+									<section
+										className={`${styles.form__group} ${styles.cardName}`}
+									>
+										<label htmlFor="nameOnCard">Name on Card</label>
+										<input
+											type="text"
+											id="nameOnCard"
+											placeholder="alfred thompson ovie"
+											required
+											{...register("nameOnCard", { required: true })}
+										/>
+									</section>
+									<section
+										className={`${styles.form__group} ${styles.cardNumber}`}
+									>
+										<label htmlFor="cardNumber">Card Number</label>
+										<input
+											type="number"
+											id="cardNumber"
+											placeholder="1234567891234567"
+											required
+											{...register("cardNumber", { required: true })}
+										/>
+									</section>
+									<section className={`${styles.form__group} ${styles.cvc}`}>
+										<label htmlFor="cvc">CVC</label>
+										<input
+											type="number"
+											id="cvc"
+											placeholder="123"
+											required
+											{...register("cvc", { required: true })}
+										/>
+									</section>
+									<section
+										className={`${styles.form__group} ${styles.expMonth}`}
+									>
+										<label htmlFor="expMonth">Exp. Month</label>
+										<input
+											type="number"
+											id="expMonth"
+											placeholder="04"
+											required
+											{...register("expMonth", { required: true })}
+										/>
+									</section>
+									<section
+										className={`${styles.form__group} ${styles.expYear}`}
+									>
+										<label htmlFor="expYear">Exp. Year</label>
+										<input
+											type="number"
+											id="expYear"
+											placeholder="2028"
+											required
+											{...register("expYear", { required: true })}
+										/>
+									</section>
 								</section>
-								<section
-									className={`${styles.form__group} ${styles.cardNumber}`}
-								>
-									<label htmlFor="cardNumber">Card Number</label>
-									<input
-										type="number"
-										id="cardNumber"
-										placeholder="1234567891234567"
-										required
-										{...register("cardNumber", {required: true})}
-									/>
-								</section>
-								<section className={`${styles.form__group} ${styles.cvc}`}>
-									<label htmlFor="cvc">CVC</label>
-									<input type="number" id="cvc" placeholder="123" required {...register("cvc", {required: true})} />
-								</section>
-								<section className={`${styles.form__group} ${styles.expMonth}`}>
-									<label htmlFor="expMonth">Exp. Month</label>
-									<input
-										type="number"
-										id="expMonth"
-										placeholder="04"
-										required
-										{...register("expMonth", {required: true})}
-									/>
-								</section>
-								<section className={`${styles.form__group} ${styles.expYear}`}>
-									<label htmlFor="expYear">Exp. Year</label>
-									<input
-										type="number"
-										id="expYear"
-										placeholder="2028"
-										required
-										{...register("expYear", {required: true})}
-									/>
-								</section>
-							</section>}
+							)}
 
-
-							{paymentMethod === "paymentOnDelivery" &&  <section className={styles.payOnDelivery}>
-								<GiTakeMyMoney />
-								<p>
-									The ‘Cash on Delivery’ option enables you to pay in cash when
-									our delivery courier arrives at your residence. Just make sure
-									your address is correct so that your order will not be
-									cancelled.
-								</p>
-							</section>}
+							{paymentMethod === "paymentOnDelivery" && (
+								<section className={styles.payOnDelivery}>
+									<GiTakeMyMoney />
+									<p>
+										The ‘Cash on Delivery’ option enables you to pay in cash
+										when our delivery courier arrives at your residence. Just
+										make sure your address is correct so that your order will
+										not be cancelled.
+									</p>
+								</section>
+							)}
 						</section>
 					</section>
 
-					<section className={styles.summary}>
+					{/* <section className={styles.summary}>
 						<h1>Summary</h1>
 						<section></section>
 						<ul>
@@ -262,49 +284,62 @@ function Checkout() {
 							</li>
 						</ul>
 						<button>Continue & pay</button>
-					</section>
+					</section> */}
+
+					<Summary
+						total={total}
+						grandTotal={grandTotal}
+						SHIPPING_FEE={SHIPPING_FEE}
+						VAT={VAT}
+					/>
 				</form>
 			</section>
 
-			{isOpen && <section className={styles.modal}>
-				<section className={styles.modalContent}>
-          <FaCheckCircle className={ styles.checkmark} />
-					<h1>Thank You <span> For Your Order</span></h1>
-					<p>You will receive an email confirmation shortly.</p>
-					<section className={styles.productSectionContainer}>
-						<section className={styles.productSection}>
-							<section className={styles.products}>
-								<img src={ firstBookInCart?.image} alt="product" />
-								<section>
-									<h1>{ firstBookInCart?.title}</h1>
-									<p className={styles.price}>
-										<span>Price:</span>
-										
-										<span> <FaNairaSign /> { firstBookInCart?.totalPrice}</span>
-										
+			{isOpen && (
+				<section className={styles.modal}>
+					<section className={styles.modalContent}>
+						<FaCheckCircle className={styles.checkmark} />
+						<h1>
+							Thank You <span> For Your Order</span>
+						</h1>
+						<p>You will receive an email confirmation shortly.</p>
+						<section className={styles.productSectionContainer}>
+							<section className={styles.productSection}>
+								<section className={styles.products}>
+									<img src={firstBookInCart?.image} alt="product" />
+									<section>
+										<h1>{firstBookInCart?.title}</h1>
+										<p className={styles.price}>
+											<span>Price:</span>
+
+											<span>
+												{" "}
+												<FaNairaSign /> {firstBookInCart?.totalPrice}
+											</span>
+										</p>
+									</section>
+
+									<p className={styles.productQuantity}>
+										<span>x</span>
+										<span>{firstBookInCart?.quantity}</span>
 									</p>
 								</section>
-
-                <p className={styles.productQuantity}>
-                  <span>x</span>
-									<span>{ firstBookInCart?.quantity }</span>
-                </p>
-              </section>
-              <section className={styles.otherProductQuantity}>
-                <p>and {numberOfItemsLeft} other item(s)</p>
-              </section>
+								<section className={styles.otherProductQuantity}>
+									<p>and {numberOfItemsLeft} other item(s)</p>
+								</section>
+							</section>
+							<section className={styles.grandTotalSection}>
+								<h1>Grand Total</h1>
+								<p>
+									<FaNairaSign />
+									<span>{grandTotal}</span>
+								</p>
+							</section>
 						</section>
-						<section className={styles.grandTotalSection}>
-							<h1>Grand Total</h1>
-							<p>
-								<FaNairaSign />
-								<span>{grandTotal}</span>
-							</p>
-						</section>
+						<button onClick={handleModal}>Back to Homepage</button>
 					</section>
-					<button onClick={handleModal}>Back to Homepage</button>
 				</section>
-			</section>}
+			)}
 		</main>
 	);
 }

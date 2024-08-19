@@ -15,7 +15,6 @@ import { useBooks } from "../../context/BooksContext";
 function BookCard({ layout, book }) {
 	const { updateWishlist, addToCart } = useBooks();
 	const [isWishlist, setIsWishlist] = useState(false);
-	const id = 2;
 
 	function handleAddtoCart(item) {
 		const bookToAdd = {

@@ -1,35 +1,28 @@
 /* eslint-disable react/prop-types */
-import styles from "./Listings.module.css";
+import { useState } from "react";
 import { BsFillGrid3X3GapFill } from "react-icons/bs";
 import { FaList } from "react-icons/fa";
 import BookCard from "../../books/BookCard";
-import { useEffect, useState } from "react";
-import { useBooks } from "../../../context/BooksContext";
+import Spinner from "../../loader/Spinner";
+import styles from "./Listings.module.css";
+import Message from "../../message/Message";
 
-function Listings({getFilteredBooks, filteredBooks}) {
-	// const { books, isLoading } = useBooks();
-	// const [filteredBooks, setFilteredBooks] = useState([]);
+function Listings({getFilteredBooks, filteredBooks, isLoading}) {
+
+	const [layout, setLayout] = useState("grid");
 	const [sortBy, setSortBy] = useState("default");
-
 
 	const handleChange = (event) => {
 		const query = event.target.value;
 		setSortBy(query);
 		getFilteredBooks(query);
-		// console.log(query);
 	};
 
 
-	const [layout, setLayout] = useState("grid");
+	if (isLoading) return <Spinner />;
 
-	// useEffect(() => {
-
-	// 	console.log(filteredBooks)
-
-	// 	// if (sortBy === "default") setFilteredBooks(books);
-	// }, [filteredBooks]);
-
-	if(filteredBooks.length === 0) return <p className={styles.container}>Sorry no books found</p>
+	if (filteredBooks.length === 0) return <Message text="Sorry no books found, select all Genre to view all books" page="books"/>
+	// if(filteredBooks.length === 0) return <p className={styles.container}>Sorry no books found</p>
 
 	return (
 		<section className={styles.container}>
@@ -73,8 +66,6 @@ function Listings({getFilteredBooks, filteredBooks}) {
 					<BookCard key={book.id} book={book} layout={layout} />
 				))}
 
-				{/* <BookCard srcPath="/images/alchemist.jpeg" layout={layout}/>
-				<BookCard srcPath="/images/1984.jpeg" layout={layout}/> */}
 			</section>
 		</section>
 	);

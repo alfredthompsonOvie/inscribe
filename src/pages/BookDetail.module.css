@@ -94,6 +94,17 @@ top: -3px;
 .product__newPrice {
   font-size: 2.2rem;
   font-weight: 600;
+
+}
+.product__newPrice, .product__oldPrice{
+  display: flex;
+  align-items: center;
+}
+.product__newPrice svg{
+  font-size: 1.7rem;
+}
+.product__oldPrice svg{
+  font-size: .9rem;
 }
 .product__discount {
   font-size: .8rem;
@@ -153,6 +164,10 @@ top: -3px;
 }
 .product__quantity section svg{
   color: var(--text);
+}
+.totalAmount {
+  display: flex;
+  align-items: center;
 }
 
 .btns {
