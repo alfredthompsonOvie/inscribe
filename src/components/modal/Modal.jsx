@@ -5,7 +5,7 @@ import styles from "./Modal.module.css";
 
 function Modal({ onCloseModal, title, linkPath, LinkText, books }) {
 	const navigate = useNavigate();
-	const totalPrice = books.reduce((acc, cur) => acc + cur.totalPrice, 0);
+	const totalPrice = books.reduce((acc, cur) => acc + cur.price, 0);
 
 	function handleClick() {
 		onCloseModal(false);
