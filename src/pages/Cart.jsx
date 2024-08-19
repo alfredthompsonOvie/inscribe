@@ -50,7 +50,7 @@ const Cart = () => {
 			<h1 className={styles.title}>Shopping Cart</h1>
 			<section className={styles.content}>
 				{cart.length === 0 && (
-					<Message text="cart"/>
+					<Message text="Your cart is Empty"/>
 				)}
 
 				{cart.length !== 0 && (

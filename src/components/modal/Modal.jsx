@@ -7,6 +7,7 @@ function Modal({ onCloseModal, title, linkPath, LinkText, books }) {
 	const navigate = useNavigate();
 	const totalPrice = books.reduce((acc, cur) => acc + cur.price, 0);
 
+
 	function handleClick() {
 		onCloseModal(false);
 		navigate(linkPath);

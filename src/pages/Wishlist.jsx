@@ -20,7 +20,7 @@ function Wishlist() {
 			<h1 className={styles.title}>Wishlist</h1>
 			<section className={styles.content}>
 				{/* ! NOTIFIES THE USER THAT CART IS EMPTY */}
-				{wishlist.length === 0 && <Message text="wishlist"/>}
+				{wishlist.length === 0 && <Message text="Your wishlist is empty"/>}
 
 
 				{wishlist.length !== 0 && <ul className={styles.cart}>
