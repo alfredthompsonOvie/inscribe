@@ -64,7 +64,7 @@ function Modal({ onCloseModal, title, linkPath, LinkText, books }) {
 											<span>Total Price:</span>
 											<span>
 												<FaNairaSign />
-												{totalPrice}
+												{totalPrice.toFixed(2)}
 											</span>
 										</p>
 									</section>
