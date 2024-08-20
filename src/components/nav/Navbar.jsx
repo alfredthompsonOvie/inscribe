@@ -37,6 +37,8 @@ function Navbar({ mode }) {
 
 	function onSubmit(data) {
 		// ?category=fiction&sort=popular
+		console.log(data)
+		console.log(data.genre)
 		navigate(`/books?genre=${data.genre}&query=${data.search}`);
 		setShowSearch(false);
 		reset();
@@ -73,8 +75,8 @@ function Navbar({ mode }) {
 					}`}
 				>
 					<form onSubmit={handleSubmit(onSubmit)}>
-						<section className={styles.select} {...register("genre")}>
-							<select name="category" id="category">
+						<section className={styles.select} >
+							<select name="category" id="category" {...register("genre")}>
 								<option value="default" key="default">
 									Category
 								</option>

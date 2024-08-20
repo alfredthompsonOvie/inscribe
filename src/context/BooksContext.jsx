@@ -113,6 +113,7 @@ function BooksProvider({ children }) {
 	// ! CART API================================
 
 	function addToCart(data) {
+		console.log(data)
 		const isInCart = cart.some((book) => book.id === data.id);
 
 		if (!isInCart) {

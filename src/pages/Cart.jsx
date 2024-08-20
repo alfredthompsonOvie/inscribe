@@ -21,6 +21,7 @@ const Cart = () => {
 	} = useBooks();
 
 	const navigate = useNavigate();
+	console.log(cart)
 
 	// ! revised
 	const total = cart.reduce((acc, cur) => acc + cur.totalPrice, 0);
@@ -110,7 +111,9 @@ const Cart = () => {
 											Total Price:{" "}
 										</span>
 										<p>
-											<FaNairaSign /> <span>{book.totalPrice.toFixed(2)}</span>
+											<FaNairaSign />
+											{/* <span>{book?.totalPrice}</span> */}
+											<span>{book?.totalPrice.toFixed(2)}</span>
 										</p>
 									</section>
 								</li>

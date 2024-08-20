@@ -32,26 +32,26 @@ function Home() {
 			<Hero />
 
 			{/* Daily Deal */}
-			<BookShelf title="Daily Deals" linkPath="/books" books={dailyDeals} />
+			<BookShelf title="Daily Deals" linkPath="/books?stock=dailyDeal" books={dailyDeals} />
 
 			{/* category */}
 			<Genre genre={genre} />
 
 			{/* New Arrivals*/}
-			<BookShelf title="New Arrivals" linkPath="/books" books={newArrivals} />
+			<BookShelf title="New Arrivals" linkPath="/books?stock=newArrival" books={newArrivals} />
 
 			{/* On Sale */}
-			<BookShelf title="On Sale" linkPath="/books" books={onSale} />
+			<BookShelf title="On Sale" linkPath="/books?stock=onSale" books={onSale} />
 
 			{/* trending books */}
 			<BookShelf
 				title="Trending on Inscribe"
-				linkPath="/books"
+				linkPath="/books?stock=trending"
 				books={trending}
 			/>
 
 			{/* bestseller */}
-			<BookShelf title="Best Seller" linkPath="/books" books={bestseller} />
+			<BookShelf title="Best Seller" linkPath="/books?stock=bestseller" books={bestseller} />
 
 			{/* subscribe */}
 			<SpecialOffer />

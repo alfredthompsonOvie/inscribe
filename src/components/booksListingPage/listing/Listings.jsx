@@ -1,42 +1,53 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { BsFillGrid3X3GapFill } from "react-icons/bs";
 import { FaList } from "react-icons/fa";
 import BookCard from "../../books/BookCard";
 import Spinner from "../../loader/Spinner";
-import styles from "./Listings.module.css";
 import Message from "../../message/Message";
+import styles from "./Listings.module.css";
 
-function Listings({getFilteredBooks, filteredBooks, isLoading}) {
+function Listings({getBooksByStockType, filteredBooks, isLoading}) {
 
+	const [searchParams] = useSearchParams();
 	const [layout, setLayout] = useState("grid");
-	const [sortBy, setSortBy] = useState("default");
+	const [stockType, setStockType] = useState("default");
 
 	const handleChange = (event) => {
-		const query = event.target.value;
-		setSortBy(query);
-		getFilteredBooks(query);
+		const stockTypeQuery = event.target.value;
+		// sets the stock type of the selected stock locally
+		setStockType(stockTypeQuery);
+
+		// calls this function from the parent
+		getBooksByStockType(stockTypeQuery);
 	};
 
+
+	useEffect(() => {
+		const stock = searchParams.get("stock");
+		if (stock) { 
+			setStockType(stock);
+		}
+	}, [searchParams]);
 
 	if (isLoading) return <Spinner />;
 
 	if (filteredBooks.length === 0) return <Message text="Sorry no books found, select all Genre to view all books" page="books"/>
-	// if(filteredBooks.length === 0) return <p className={styles.container}>Sorry no books found</p>
 
 	return (
 		<section className={styles.container}>
 			<header className={styles.header}>
 				<section>
 					<h1>Sort by</h1>
-					<label htmlFor="sortBy"></label>
+					<label htmlFor="stockType"></label>
 					<select
-						name="sortBy"
-						id="sortBy"
-						value={sortBy}
+						name="stockType"
+						id="stockType"
+						value={stockType}
 						onChange={handleChange}
 					>
-						<option value="default">All Books</option>
+						<option value="all">All Books</option>
 						<option value="dailyDeal">Daily Deals</option>
 						<option value="onSale">Onsales</option>
 						<option value="trending">Trending</option>

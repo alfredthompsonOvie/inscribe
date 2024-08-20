@@ -25,7 +25,6 @@
 
 .cart {
 	background-color: rgba(0, 0, 0, 0.1);
-  /* padding: 1em; */
   border-radius: .5em;
   margin-top: 1em;
 }
@@ -42,22 +41,18 @@
 	align-items: flex-start;
   flex-wrap: wrap;
 	gap: 1em;
-	/* max-width: max-content; */
 
 }
+
 @media (min-width: 420px){
   .cartItem {
     padding: 1em;
     border-radius: 0.5em;
     margin-bottom: 1em;
     display: flex;
-    /* flex-direction: column; */
-    /* align-items: flex-start; */
     align-items: center;
     flex-wrap: wrap;
     gap: 1em;
-    /* max-width: max-content; */
-  
   
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -80,6 +75,7 @@
   color: inherit;
 	font-size: 1.2rem;
 }
+
 .cartItem__name a:hover {
   text-decoration: underline;
 }
@@ -88,7 +84,8 @@
 	font-family: var(--ff-brand);
 }
 .cartItem__img {
-	width: 50px;
+	width: 5em;
+  display: flex;
 }
 .cartItem__price,
 .cartItem__price p {
@@ -123,7 +120,6 @@
   border: none;
   border-radius: 0.5em;
   color: #DEDEDE;
-  /* box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.3); */
   justify-self: start;
   display: flex;
   justify-content: center;
@@ -159,7 +155,6 @@
 } 
 
 .btn:active {
-  /* box-shadow: 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.3); */
   transform: translate(0.1em, 0.1em);
 }
 
@@ -167,10 +162,31 @@
   color: var(--cta)
 }
 
+@media (min-width: 590px) {
+  .cartItem__profile {
+    grid-column: 1/-1;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+  .cartItem__name a {
+    color: inherit;
+    font-size: 1rem;
+  }
+
+}
+@media (min-width: 992px) {
+  .cartItem__profile {
+    text-align: left;
+    display: grid;
+    grid-template-columns: .2fr .6fr 1.2fr;
+    gap: .5em;
+  }
+
+}
 
 
-
-@media (min-width: 800px) {
+@media (min-width: 992px) {
   .content {
     display: grid;
     grid-template-columns: 3fr 1fr;
@@ -203,13 +219,8 @@
   
 	.cartItem {
     max-width: 100%;
-    /* display: grid; */
-    /* grid-template-columns: 3fr repeat(3, 1fr); */
-    /* grid-template-rows: auto; */
 	}
 	.cartItem__profile {
-		/* display: flex; */
-		/* background-color: red; */
     grid-column: 1;
 	}
 	.cartItem__price__span {

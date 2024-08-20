@@ -30,7 +30,6 @@ function App() {
 						<Route path="cart" element={<Cart />} />
 					</Route>
 				</Routes>
-				
 				</Suspense>
 			</BrowserRouter>
 		</BooksProvider>

@@ -1,13 +1,12 @@
-import styles from "./Checkout.module.css";
-
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import { FaNairaSign } from "react-icons/fa6";
 import { GiTakeMyMoney } from "react-icons/gi";
 import { FaCheckCircle } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 import { useBooks } from "../context/BooksContext";
-import { useForm } from "react-hook-form";
 import Summary from "../components/summary/Summary";
+import styles from "./Checkout.module.css";
 
 const SHIPPING_FEE = 50;
 const VAT = 10;
@@ -250,42 +249,6 @@ function Checkout() {
 						</section>
 					</section>
 
-					{/* <section className={styles.summary}>
-						<h1>Summary</h1>
-						<section></section>
-						<ul>
-							<li>
-								<span className={styles.summaryText}>Total</span>
-								<p>
-									<FaNairaSign />
-									<span>{total}</span>
-								</p>
-							</li>
-							<li>
-								<span className={styles.summaryText}>Shipping</span>
-								<p>
-									<FaNairaSign />
-									<span>{VAT}</span>
-								</p>
-							</li>
-							<li>
-								<span className={styles.summaryText}>Vat(included)</span>
-								<p>
-									<FaNairaSign />
-									<span>{ SHIPPING_FEE}</span>
-								</p>
-							</li>
-							<li>
-								<span className={styles.summaryText}>Grand Total</span>
-								<p>
-									<FaNairaSign />
-									<span>{grandTotal}</span>
-								</p>
-							</li>
-						</ul>
-						<button>Continue & pay</button>
-					</section> */}
-
 					<Summary
 						total={total}
 						grandTotal={grandTotal}
@@ -321,7 +284,7 @@ function Checkout() {
 
 									<p className={styles.productQuantity}>
 										<span>x</span>
-										<span>{firstBookInCart?.quantity}</span>
+										<span>{firstBookInCart?.totalQuantity}</span>
 									</p>
 								</section>
 								<section className={styles.otherProductQuantity}>

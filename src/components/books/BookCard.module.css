@@ -82,7 +82,7 @@
 	transition: all 0.7s;
 }
 .heading h1 {
-	margin-bottom: 0.5em;
+	margin-bottom: 1em;
 }
 .heading hr {
 	display: block;
@@ -100,21 +100,28 @@
 	font-size: 22px;
 	margin-top: 0.8em;
 	color: #fff;
-}
-.price {
 	margin-top: 1.5em;
 	opacity: 0;
 	transform: translateY(40px);
 	transition: all 0.7s;
 }
+.price svg {
+	width: 1.5rem;
+}
 .old {
 	text-decoration: line-through;
 	color: lighten(rgb(77, 77, 77), 40%);
 	opacity: 0.5;
+	color: var(--cta);
+	font-size: .9rem;
 }
 .new {
 	font-weight: bold;
 	font-size: 2rem;
+}
+.new, .old {
+	display: flex;
+	align-items: center;
 }
 .btns {
 	display: flex;

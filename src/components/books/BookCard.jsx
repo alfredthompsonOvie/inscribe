@@ -2,6 +2,7 @@
 
 import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa6";
+import { FaNairaSign } from "react-icons/fa6";
 
 import { MdAddShoppingCart } from "react-icons/md";
 import { IoMdHeart } from "react-icons/io";
@@ -14,13 +15,14 @@ import { useBooks } from "../../context/BooksContext";
 
 function BookCard({ layout, book }) {
 	const { updateWishlist, addToCart } = useBooks();
+	
+	//isWishlisted is a feature yet to be implemented
 	const [isWishlist, setIsWishlist] = useState(false);
 
 	function handleAddtoCart(item) {
 		const bookToAdd = {
 			...item,
-			totalPrice: item.price,
-			quantity: 1
+			totalPrice: item.price
 		};
 
 		addToCart(bookToAdd);
@@ -55,8 +57,14 @@ function BookCard({ layout, book }) {
 						<hr />
 					</section>
 					<section className={` ${styles.price}`}>
-						<p className={styles.new}>${book?.price }</p>
-						{book?.oldPrice !== 0 && <p className={styles.old}>${book?.oldPrice }</p>}
+						<p className={styles.new}>
+						<FaNairaSign />
+							<span>{book?.price}</span>
+						</p>
+						{book?.oldPrice !== 0 && <p className={styles.old}>
+							<FaNairaSign />
+							<span>{book?.oldPrice}</span>
+							</p>}
 					</section>
 				</section>
 				<footer className={styles.btns}>

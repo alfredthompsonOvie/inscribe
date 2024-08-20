@@ -7,6 +7,7 @@ function Modal({ onCloseModal, title, linkPath, LinkText, books }) {
 	const navigate = useNavigate();
 	const totalPrice = books.reduce((acc, cur) => acc + cur.price, 0);
 
+	const booksToShow = books.slice(0, 3);
 
 	function handleClick() {
 		onCloseModal(false);
@@ -44,7 +45,7 @@ function Modal({ onCloseModal, title, linkPath, LinkText, books }) {
 						{books.length !== 0 && (
 							<>
 								<section className={styles.cards}>
-									{books.map((book, idx) => (
+									{booksToShow.map((book, idx) => (
 										<section key={idx} className={styles.modalCard}>
 											<section>
 												<img
@@ -72,7 +73,7 @@ function Modal({ onCloseModal, title, linkPath, LinkText, books }) {
 								)}
 
 								<button onClick={handleClick} className={styles.btn}>
-									{LinkText}
+									{LinkText} ({books.length})
 								</button>
 							</>
 						)}
