@@ -26,7 +26,9 @@
   justify-content: center;
   gap: 2.5em;
 }
-
+.btnActive svg{
+  color: var(--text)
+}
 @media (min-width: 768px) {
   .container {
     
