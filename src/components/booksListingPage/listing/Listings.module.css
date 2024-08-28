@@ -26,6 +26,9 @@
   justify-content: center;
   gap: 2.5em;
 }
+.btnActive:hover svg{
+  color: var(--text)
+}
 .btnActive svg{
   color: var(--text)
 }
