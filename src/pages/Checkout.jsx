@@ -287,9 +287,9 @@ function Checkout() {
 										<span>{firstBookInCart?.totalQuantity}</span>
 									</p>
 								</section>
-								<section className={styles.otherProductQuantity}>
+								{numberOfItemsLeft > 0 && <section className={styles.otherProductQuantity}>
 									<p>and {numberOfItemsLeft} other item(s)</p>
-								</section>
+								</section>}
 							</section>
 							<section className={styles.grandTotalSection}>
 								<h1>Grand Total</h1>
