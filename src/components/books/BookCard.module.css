@@ -6,6 +6,7 @@
 	grid-template-rows: auto;
 	height: 380px;
 	width: 250px;
+	margin-inline: auto;
 	overflow: hidden;
 }
 
