@@ -58,12 +58,12 @@ function Listings({getBooksByStockType, filteredBooks, isLoading}) {
 
 				<ul>
 					<li>
-						<button onClick={() => setLayout("grid")} className={layout === "grid" ? styles.btnActive : ""}>
+						<button onClick={() => setLayout("grid")} className={`${styles.layoutBtn} ${layout === "grid" ? styles.btnActive : ""}`}>
 							<BsFillGrid3X3GapFill />
 						</button>
 					</li>
 					<li>
-						<button onClick={() => setLayout("list")} className={layout === "list" ? styles.btnActive : ""}>
+						<button onClick={() => setLayout("list")} className={`${styles.layoutBtn} ${layout === "list" ? styles.btnActive : ""}`}>
 							<FaList />
 						</button>
 					</li>
